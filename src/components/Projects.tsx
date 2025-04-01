@@ -9,12 +9,12 @@ const Projects = () => {
     <section id="projects" className="bg-black py-24">
       <div className="container-custom">
         <div className="mb-6">
-          <h2 className="text-5xl font-bold mb-3">Featured Projects</h2>
+          <h2 className="text-5xl font-bold mb-3 text-white">Featured Projects</h2>
           <p className="text-white/70 text-lg">A curated selection of my web projects.</p>
         </div>
         
         <div className="flex justify-start mb-12">
-          <Button variant="outline" className="group border-white/20 hover:bg-white/5">
+          <Button variant="outline" className="group border-white/20 hover:bg-white/5 text-white">
             See all <ArrowRight className="ml-1 group-hover:translate-x-1 transition-transform" size={16} />
           </Button>
         </div>
@@ -39,7 +39,7 @@ const Projects = () => {
                     <span className="text-white/50 text-sm">2023 • Personal</span>
                   </div>
                   
-                  <h3 className="text-4xl font-bold mb-3">{project.title}</h3>
+                  <h3 className="text-4xl font-bold mb-3 text-white">{project.title}</h3>
                   
                   <div className="flex flex-wrap gap-2 mb-5">
                     {project.technologies.map((tech, idx) => (
@@ -74,7 +74,7 @@ const Projects = () => {
         </div>
         
         <div className="flex justify-end mt-12">
-          <Button variant="outline" className="group border-white/20 hover:bg-white/5">
+          <Button variant="outline" className="group border-white/20 hover:bg-white/5 text-white">
             See all <ArrowRight className="ml-1 group-hover:translate-x-1 transition-transform" size={16} />
           </Button>
         </div>

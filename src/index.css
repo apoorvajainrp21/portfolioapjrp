@@ -48,12 +48,16 @@
   }
 
   .section-heading {
-    @apply text-3xl md:text-5xl font-bold mb-8 relative uppercase;
+    @apply text-3xl md:text-5xl font-bold mb-8 relative uppercase text-white;
   }
 
   .section-heading::after {
     content: "";
     @apply block w-16 h-0.5 bg-white mt-3;
+  }
+  
+  h1, h2, h3, h4, h5, h6, p, span, a {
+    @apply text-white;
   }
 }
 
@@ -65,7 +69,7 @@
 }
 
 .text-giant {
-  @apply text-5xl md:text-7xl lg:text-8xl font-bold uppercase tracking-tighter;
+  @apply text-5xl md:text-7xl lg:text-8xl font-bold uppercase tracking-tighter text-white;
 }
 
 .scroll-indicator {
