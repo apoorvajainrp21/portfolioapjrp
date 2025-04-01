@@ -107,7 +107,18 @@ export default {
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in': 'fade-in 0.5s ease-out forwards',
 				'slide-up': 'slide-up 0.5s ease-out forwards'
-			}
+			},
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
+      },
+      letterSpacing: {
+        tighter: '-.05em',
+        tight: '-.025em',
+        normal: '0',
+        wide: '.025em',
+        wider: '.05em',
+        widest: '.1em',
+      },
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
