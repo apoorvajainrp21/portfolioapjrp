@@ -19,7 +19,7 @@ const Footer = () => {
             <span>/</span>
             <a href="#" className="hover:text-white transition-colors">LINKEDIN</a>
             <span>/</span>
-            <a href="#" className="hover:text-white transition-colors">INSTAGRAM</a>
+            <a href="#" className="hover:text-white transition-colors">GITHUB</a>
           </div>
         </div>
       </div>

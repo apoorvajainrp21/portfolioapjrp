@@ -1,42 +1,61 @@
 
 import { projectsData } from '@/data/content';
-import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, ArrowRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const Projects = () => {
   return (
-    <section id="projects" className="bg-portfolio-lightGray">
+    <section id="projects" className="bg-black py-24">
       <div className="container-custom">
-        <h2 className="section-heading">Projects</h2>
+        <div className="mb-6">
+          <h2 className="text-5xl font-bold mb-3">Featured Projects</h2>
+          <p className="text-white/70 text-lg">A curated selection of my web projects.</p>
+        </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="flex justify-start mb-12">
+          <Button variant="outline" className="group border-white/20 hover:bg-white/5">
+            See all <ArrowRight className="ml-1 group-hover:translate-x-1 transition-transform" size={16} />
+          </Button>
+        </div>
+        
+        <div className="space-y-8">
           {projectsData.map((project, index) => (
-            <Card 
+            <div 
               key={index} 
-              className="overflow-hidden border-none shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+              className="grid grid-cols-1 lg:grid-cols-2 gap-8 p-6 border border-white/10 rounded-lg hover:border-white/20 transition-all duration-300"
             >
-              <div className="h-48 overflow-hidden">
+              <div className="overflow-hidden rounded-md border border-white/10">
                 <img 
                   src={project.image} 
                   alt={project.title} 
-                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                  className="w-full h-full object-cover"
                 />
               </div>
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold text-portfolio-darkBlue mb-2">{project.title}</h3>
-                <p className="text-portfolio-darkBlue/80 mb-4">{project.description}</p>
-                
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.technologies.map((tech, idx) => (
-                    <Badge 
-                      key={idx}
-                      variant="secondary" 
-                      className="bg-portfolio-blue/10 text-portfolio-blue hover:bg-portfolio-blue/20"
-                    >
-                      {tech}
-                    </Badge>
-                  ))}
+              
+              <div className="flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-white/50 text-sm">2023 • Personal</span>
+                  </div>
+                  
+                  <h3 className="text-4xl font-bold mb-3">{project.title}</h3>
+                  
+                  <div className="flex flex-wrap gap-2 mb-5">
+                    {project.technologies.map((tech, idx) => (
+                      <Badge 
+                        key={idx}
+                        variant="outline" 
+                        className="bg-white/5 hover:bg-white/10 text-white border-white/10"
+                      >
+                        {tech}
+                      </Badge>
+                    ))}
+                  </div>
+                  
+                  <p className="text-white/80 mb-4 leading-relaxed">
+                    {project.description}
+                  </p>
                 </div>
                 
                 {project.link && (
@@ -44,14 +63,20 @@ const Projects = () => {
                     href={project.link} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="flex items-center gap-1 text-portfolio-blue hover:text-portfolio-blue/80 text-sm font-medium"
+                    className="flex items-center gap-1 text-white hover:text-white/80 mt-auto text-sm font-medium group"
                   >
-                    View Project <ExternalLink size={14} />
+                    View Project <ExternalLink size={14} className="transition-transform group-hover:translate-x-1" />
                   </a>
                 )}
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           ))}
+        </div>
+        
+        <div className="flex justify-end mt-12">
+          <Button variant="outline" className="group border-white/20 hover:bg-white/5">
+            See all <ArrowRight className="ml-1 group-hover:translate-x-1 transition-transform" size={16} />
+          </Button>
         </div>
       </div>
     </section>
