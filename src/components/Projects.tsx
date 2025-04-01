@@ -63,7 +63,7 @@ const Projects = () => {
                     href={project.link} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="flex items-center gap-1 text-white hover:text-white/80 mt-auto text-sm font-medium group"
+                    className="flex items-center gap-1 text-red-500 hover:text-red-400 mt-auto text-sm font-medium group"
                   >
                     View Project <ExternalLink size={14} className="transition-transform group-hover:translate-x-1" />
                   </a>
