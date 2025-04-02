@@ -47,27 +47,27 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact">
+    <section id="contact" className="bg-black">
       <div className="container-custom">
         <h2 className="section-heading">Contact Me</h2>
         
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
           <div className="lg:col-span-2 space-y-6">
-            <h3 className="text-2xl font-bold text-portfolio-darkBlue">Let's Connect</h3>
-            <p className="text-portfolio-darkBlue/80">
+            <h3 className="text-2xl font-bold text-white">Let's Connect</h3>
+            <p className="text-white/80">
               Feel free to reach out for collaborations, opportunities, or just to say hello! I'll get back to you as soon as possible.
             </p>
             
             <div className="space-y-4 mt-8">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-portfolio-blue/10 flex items-center justify-center">
-                  <Mail size={18} className="text-portfolio-blue" />
+                <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
+                  <Mail size={18} className="text-white" />
                 </div>
                 <div>
-                  <p className="text-sm text-portfolio-gray">Email</p>
+                  <p className="text-sm text-white/50">Email</p>
                   <a 
                     href={`mailto:${contactData.email}`} 
-                    className="text-portfolio-darkBlue hover:text-portfolio-blue"
+                    className="text-white hover:text-white/80"
                   >
                     {contactData.email}
                   </a>
@@ -75,14 +75,14 @@ const Contact = () => {
               </div>
               
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-portfolio-blue/10 flex items-center justify-center">
-                  <Phone size={18} className="text-portfolio-blue" />
+                <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
+                  <Phone size={18} className="text-white" />
                 </div>
                 <div>
-                  <p className="text-sm text-portfolio-gray">Phone</p>
+                  <p className="text-sm text-white/50">Phone</p>
                   <a 
                     href={`tel:${contactData.phone}`} 
-                    className="text-portfolio-darkBlue hover:text-portfolio-blue"
+                    className="text-white hover:text-white/80"
                   >
                     {contactData.phone}
                   </a>
@@ -90,12 +90,12 @@ const Contact = () => {
               </div>
               
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-portfolio-blue/10 flex items-center justify-center">
-                  <MapPin size={18} className="text-portfolio-blue" />
+                <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
+                  <MapPin size={18} className="text-white" />
                 </div>
                 <div>
-                  <p className="text-sm text-portfolio-gray">Location</p>
-                  <p className="text-portfolio-darkBlue">{contactData.location}</p>
+                  <p className="text-sm text-white/50">Location</p>
+                  <p className="text-white">{contactData.location}</p>
                 </div>
               </div>
             </div>
@@ -105,7 +105,7 @@ const Contact = () => {
                 href={contactData.socialLinks.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-portfolio-blue/10 flex items-center justify-center text-portfolio-blue hover:bg-portfolio-blue hover:text-white transition-colors"
+                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-colors"
                 aria-label="GitHub"
               >
                 <Github size={18} />
@@ -114,7 +114,7 @@ const Contact = () => {
                 href={contactData.socialLinks.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-portfolio-blue/10 flex items-center justify-center text-portfolio-blue hover:bg-portfolio-blue hover:text-white transition-colors"
+                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-colors"
                 aria-label="LinkedIn"
               >
                 <Linkedin size={18} />
@@ -123,7 +123,7 @@ const Contact = () => {
                 href={contactData.socialLinks.twitter}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-portfolio-blue/10 flex items-center justify-center text-portfolio-blue hover:bg-portfolio-blue hover:text-white transition-colors"
+                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-colors"
                 aria-label="Twitter"
               >
                 <Twitter size={18} />
@@ -131,12 +131,12 @@ const Contact = () => {
             </div>
           </div>
           
-          <Card className="lg:col-span-3 border-none shadow-md">
+          <Card className="lg:col-span-3 border-white/10 bg-black shadow-md">
             <CardContent className="p-6">
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-2">
-                    <label htmlFor="name" className="text-sm font-medium text-portfolio-darkBlue">
+                    <label htmlFor="name" className="text-sm font-medium text-white">
                       Name
                     </label>
                     <Input
@@ -146,11 +146,11 @@ const Contact = () => {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="border-portfolio-blue/20 focus:border-portfolio-blue"
+                      className="border-white/20 bg-white/5 text-white focus:border-white/30"
                     />
                   </div>
                   <div className="space-y-2">
-                    <label htmlFor="email" className="text-sm font-medium text-portfolio-darkBlue">
+                    <label htmlFor="email" className="text-sm font-medium text-white">
                       Email
                     </label>
                     <Input
@@ -161,13 +161,13 @@ const Contact = () => {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="border-portfolio-blue/20 focus:border-portfolio-blue"
+                      className="border-white/20 bg-white/5 text-white focus:border-white/30"
                     />
                   </div>
                 </div>
                 
                 <div className="space-y-2">
-                  <label htmlFor="subject" className="text-sm font-medium text-portfolio-darkBlue">
+                  <label htmlFor="subject" className="text-sm font-medium text-white">
                     Subject
                   </label>
                   <Input
@@ -177,12 +177,12 @@ const Contact = () => {
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    className="border-portfolio-blue/20 focus:border-portfolio-blue"
+                    className="border-white/20 bg-white/5 text-white focus:border-white/30"
                   />
                 </div>
                 
                 <div className="space-y-2">
-                  <label htmlFor="message" className="text-sm font-medium text-portfolio-darkBlue">
+                  <label htmlFor="message" className="text-sm font-medium text-white">
                     Message
                   </label>
                   <Textarea
@@ -192,13 +192,13 @@ const Contact = () => {
                     value={formData.message}
                     onChange={handleChange}
                     required
-                    className="min-h-32 border-portfolio-blue/20 focus:border-portfolio-blue"
+                    className="min-h-32 border-white/20 bg-white/5 text-white focus:border-white/30"
                   />
                 </div>
                 
                 <Button 
                   type="submit" 
-                  className="w-full bg-portfolio-blue hover:bg-portfolio-blue/90"
+                  className="w-full bg-white text-black hover:bg-white/90"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? 'Sending...' : 'Send Message'}

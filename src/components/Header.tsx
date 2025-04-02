@@ -12,7 +12,7 @@ const Header = () => {
       setIsScrolled(window.scrollY > 50);
       
       // Find current active section
-      const sections = ['home', 'education', 'experience', 'projects', 'contact'];
+      const sections = ['home', 'about', 'education', 'experience', 'projects', 'contact'];
       const sectionElements = sections.map(id => document.getElementById(id));
       
       const scrollPosition = window.scrollY + 100;
@@ -31,8 +31,11 @@ const Header = () => {
   }, []);
 
   const navItems = [
-    { id: 'education', label: 'ABOUT' },
-    { id: 'projects', label: 'PROJECTS' }
+    { id: 'about', label: 'ABOUT' },
+    { id: 'education', label: 'EDUCATION' },
+    { id: 'experience', label: 'EXPERIENCE' },
+    { id: 'projects', label: 'PROJECTS' },
+    { id: 'contact', label: 'CONTACT' }
   ];
 
   return (
@@ -44,7 +47,7 @@ const Header = () => {
     >
       <div className="container-custom">
         <nav className="flex items-center justify-between">
-          <a href="#home" className="text-xl font-bold">
+          <a href="#home" className="text-xl font-bold text-white">
             Jane Doe
           </a>
           
