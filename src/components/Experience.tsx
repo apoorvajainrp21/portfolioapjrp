@@ -1,8 +1,54 @@
 
-import { experienceData } from '@/data/content';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Briefcase, CheckCircle2 } from 'lucide-react';
+
+const experienceData = [
+  {
+    title: "Instructional Student Assistant",
+    company: "Cal State Fullerton",
+    location: "Fullerton, CA",
+    period: "Sep 2024 - Present",
+    description: [
+      "Delivered hands-on instruction for cyber-physical system security, Verilog, digital circuit design, and Multisim simulations.",
+      "Mentored students in labs, troubleshoot digital electronics projects, and grade assignments with actionable feedback.",
+      "Fostered practical mastery of hardware-software integration in security-focused environments."
+    ]
+  },
+  {
+    title: "Programmer Analyst",
+    company: "Cognizant Technology Solutions",
+    location: "Bengaluru, India",
+    period: "Nov 2021 - Jul 2023",
+    description: [
+      "Engineered front-end web apps using React.js, HTML5, JavaScript, ensuring secure code practices and adherence to QA standards.",
+      "Collaborated cross-functionally via JIRA and Figma for seamless design-to-development workflows.",
+      "Bolstered cybersecurity initiatives as part of the phishing awareness team, hardening app vulnerabilities."
+    ]
+  },
+  {
+    title: "ML/AI Intern",
+    company: "Pyze Inc.",
+    location: "Bengaluru, India",
+    period: "Jun 2020 - Nov 2020",
+    description: [
+      "Optimized machine learning models (Python) through data preprocessing, feature engineering, and hyperparameter tuning, boosting precision by 15%.",
+      "Partnered with engineers to deploy scalable AI solutions, enhancing user experience via predictive analytics.",
+      "Conducted rigorous A/B testing to validate model performance across real-world datasets."
+    ]
+  },
+  {
+    title: "Embedded Systems Intern",
+    company: "U.N.I.Q Technologies",
+    location: "Bengaluru, India",
+    period: "Jan 2020 - Mar 2020",
+    description: [
+      "Developed firmware for embedded systems, refining device communication protocols (C/C++) to reduce latency by 20%.",
+      "Debugged hardware-software interactions and streamlined firmware efficiency for industrial IoT devices.",
+      "Gained end-to-end exposure to embedded system design, from prototyping to deployment."
+    ]
+  }
+];
 
 const Experience = () => {
   return (

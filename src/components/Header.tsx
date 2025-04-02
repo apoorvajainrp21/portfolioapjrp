@@ -48,7 +48,7 @@ const Header = () => {
       <div className="container-custom">
         <nav className="flex items-center justify-between">
           <a href="#home" className="text-xl font-bold text-white">
-            Apoorva Jain
+            {activeSection === 'home' ? 'Apoorva Jain' : 'AJ'}
           </a>
           
           <ul className="flex items-center gap-10">

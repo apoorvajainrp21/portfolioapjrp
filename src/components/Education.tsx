@@ -1,7 +1,23 @@
 
-import { educationData } from '@/data/content';
 import { Card, CardContent } from '@/components/ui/card';
 import { GraduationCap } from 'lucide-react';
+
+const educationData = [
+  {
+    degree: "Master's in Computer Engineering",
+    institution: "California State University, Fullerton",
+    location: "Fullerton, CA",
+    period: "2023 - Present",
+    description: "Focusing on cybersecurity and hardware-software integration with a specialization in Brain-Computer Interfaces."
+  },
+  {
+    degree: "Bachelor of Engineering in Electronics and Communication",
+    institution: "Bengaluru, India",
+    location: "Bengaluru, India",
+    period: "2017 - 2021",
+    description: "Focused on embedded systems, digital electronics, and communication protocols with projects in IoT and hardware security."
+  }
+];
 
 const Education = () => {
   return (

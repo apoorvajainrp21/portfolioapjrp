@@ -35,8 +35,8 @@ const Hero = () => {
     camera.position.z = 30;
     
     // Animate waves
-    const positions = geometry.attributes.position.array;
-    const initialPositions = [...Array.from(positions)];
+    const positions = geometry.attributes.position.array as Float32Array;
+    const initialPositions = Array.from(positions);
     
     const animate = () => {
       const time = Date.now() * 0.001;
