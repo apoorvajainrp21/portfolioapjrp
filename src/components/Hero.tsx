@@ -6,6 +6,49 @@ import * as THREE from 'three';
 
 const Hero = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [currentGreeting, setCurrentGreeting] = useState("");
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [typingSpeed, setTypingSpeed] = useState(150);
+
+  const greetings = [
+    "Hello",          // English
+    "Hola",           // Spanish
+    "Bonjour",        // French
+    "Ciao",           // Italian
+    "Konnichiwa",     // Japanese
+    "Namaste",        // Hindi
+    "Ni Hao",         // Chinese
+    "Salaam",         // Arabic
+    "Guten Tag",      // German
+    "Olá"             // Portuguese
+  ];
+  
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      // Handle the typing effect
+      if (!isDeleting && currentGreeting.length < greetings[currentIndex].length) {
+        // Still typing
+        setCurrentGreeting(prev => greetings[currentIndex].substring(0, prev.length + 1));
+        setTypingSpeed(150);
+      } else if (!isDeleting && currentGreeting.length === greetings[currentIndex].length) {
+        // Finished typing, pause before deleting
+        setIsDeleting(true);
+        setTypingSpeed(1000); // Pause before deleting
+      } else if (isDeleting && currentGreeting.length > 0) {
+        // Deleting
+        setCurrentGreeting(prev => prev.substring(0, prev.length - 1));
+        setTypingSpeed(100);
+      } else if (isDeleting && currentGreeting.length === 0) {
+        // Move to next greeting
+        setIsDeleting(false);
+        setCurrentIndex(prev => (prev + 1) % greetings.length);
+        setTypingSpeed(300); // Pause before typing next word
+      }
+    }, typingSpeed);
+
+    return () => clearTimeout(timer);
+  }, [currentGreeting, currentIndex, isDeleting, typingSpeed, greetings]);
   
   useEffect(() => {
     if (!canvasRef.current) return;
@@ -99,6 +142,9 @@ const Hero = () => {
             </div>
           </div>
           <div className="md:col-span-2">
+            <h3 className="text-3xl font-medium text-white mb-3 h-10">
+              {currentGreeting}<span className="animate-pulse">|</span>
+            </h3>
             <p className="text-white/80 text-lg tracking-wide leading-relaxed">
               Blending hardware expertise with software innovation. From circuit boards to secure code, I love designing and securing technologies that balance resilience with revolution.
             </p>

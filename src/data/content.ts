@@ -86,24 +86,45 @@ export const experienceData: Experience[] = [
 
 export const projectsData: Project[] = [
   {
-    title: "E-commerce Platform",
-    description: "A full-stack e-commerce application with payment processing, user authentication, and inventory management.",
-    technologies: ["React", "Node.js", "MongoDB", "Stripe API"],
-    image: "https://images.unsplash.com/photo-1661956602116-aa6865609028?q=80&w=2064&auto=format&fit=crop",
+    title: "Thesis: Gaming Accessibility for Visually Impaired",
+    description: "Developed an accessible gaming system for visually impaired users, integrating audio cues, haptic feedback, and EEG-based controls. The project focuses on enhancing user experience through multi-sensory interactions, enabling intuitive gameplay without visual reliance.",
+    technologies: ["Unity (C#)", "Nautilus EEG", "Speech Recognition", "Haptic Feedback", "Spatial Audio"],
+    image: "https://images.unsplash.com/photo-1616588589676-62b3bd4108f6?q=80&w=2064&auto=format&fit=crop",
     link: "#"
   },
   {
-    title: "AI Content Generator",
-    description: "An AI-powered application that generates content based on user prompts using natural language processing.",
-    technologies: ["Python", "TensorFlow", "Flask", "React"],
-    image: "https://images.unsplash.com/photo-1677442135133-3c94865e67a9?q=80&w=2232&auto=format&fit=crop",
+    title: "Network Intrusion Detection with XAI",
+    description: "Designed an AI-driven intrusion detection system (IDS) that identifies cyber threats while providing transparent explanations for decisions. Integrated machine learning models to detect anomalies and improve network security.",
+    technologies: ["Python", "Scikit-Learn", "TensorFlow", "Wireshark", "SHAP"],
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2234&auto=format&fit=crop",
     link: "#"
   },
   {
-    title: "Fitness Tracking App",
-    description: "A mobile application that tracks workouts, nutrition, and provides personalized fitness recommendations.",
-    technologies: ["React Native", "Firebase", "Redux", "Chart.js"],
-    image: "https://images.unsplash.com/photo-1464746133101-a2c3f88e0dd9?q=80&w=2043&auto=format&fit=crop",
+    title: "E-Commerce Online Bookstore",
+    description: "Built a full-stack online bookstore with user authentication, shopping cart functionality, and real-time order tracking. Implemented a seamless and responsive UI to enhance the shopping experience.",
+    technologies: ["React.js", "Node.js", "Express.js", "MongoDB", "Redux"],
+    image: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=2348&auto=format&fit=crop",
+    link: "#"
+  },
+  {
+    title: "File Encryption using SHA-256 & Hashing",
+    description: "Developed a secure encryption system leveraging SHA-256 hashing for data protection. Implemented file integrity verification and key-based encryption to prevent unauthorized access.",
+    technologies: ["Python", "Cryptography Library", "Flask"],
+    image: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?q=80&w=2370&auto=format&fit=crop",
+    link: "#"
+  },
+  {
+    title: "Heart Disease Prediction",
+    description: "Created a predictive model using machine learning algorithms to assess heart disease risk based on patient health parameters. Integrated a web interface for easy user interaction and data input.",
+    technologies: ["Python", "Scikit-Learn", "Pandas", "Matplotlib", "Flask"],
+    image: "https://images.unsplash.com/photo-1628348070889-cb656235b4eb?q=80&w=2370&auto=format&fit=crop",
+    link: "#"
+  },
+  {
+    title: "Handwritten Digit Recognition",
+    description: "Developed an AI model capable of recognizing handwritten digits with high accuracy. Used deep learning techniques, particularly CNNs, for feature extraction and classification.",
+    technologies: ["Python", "TensorFlow (Keras)", "OpenCV", "CNN"],
+    image: "https://images.unsplash.com/photo-1555952494-efd681c7e3f9?q=80&w=2370&auto=format&fit=crop",
     link: "#"
   }
 ];
