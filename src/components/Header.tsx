@@ -57,10 +57,10 @@ const Header = () => {
                 <a 
                   href={`#${item.id}`}
                   className={cn(
-                    "text-sm uppercase tracking-wider transition-colors",
+                    "text-sm uppercase tracking-wider transition-colors text-red-500",
                     activeSection === item.id
-                      ? "text-white"
-                      : "text-white/70 hover:text-white"
+                      ? "text-red-500"
+                      : "text-red-500/70 hover:text-red-500"
                   )}
                 >
                   {item.label}

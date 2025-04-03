@@ -89,7 +89,7 @@ const Hero = () => {
         <div className="grid grid-cols-1 md:grid-cols-5 gap-12 items-center">
           <div className="md:col-span-3 animate-fade-in">
             <h1 className="text-giant mb-8">
-              COMPUTER<br/>ENGINEER +<br/>SOFTWARE DEVELOPER
+              COMPUTER<br/>ENGINEER <span className="text-red-500">+</span><br/>SOFTWARE DEVELOPER
             </h1>
             
             <div className="mt-8 hidden md:block">

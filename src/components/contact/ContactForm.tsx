@@ -21,13 +21,21 @@ const ContactForm = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
-      console.log('Form submitted:', formData);
+    try {
+      // In a real application, you would send the email using a service 
+      // like EmailJS, Formspree, or your own backend
+      
+      // Here we're simulating the API call
+      console.log('Sending message to: Jainrp.apoorva@gmail.com');
+      console.log('Form data:', formData);
+      
+      // Simulate API delay
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
       toast({
         title: "Message sent!",
         description: "Thank you for your message. I'll get back to you soon.",
@@ -40,8 +48,16 @@ const ContactForm = () => {
         subject: '',
         message: ''
       });
+    } catch (error) {
+      console.error('Error sending message:', error);
+      toast({
+        title: "Error sending message",
+        description: "Please try again later or contact me directly at Jainrp.apoorva@gmail.com",
+        variant: "destructive"
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 1500);
+    }
   };
 
   return (
