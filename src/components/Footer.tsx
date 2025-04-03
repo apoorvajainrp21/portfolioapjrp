@@ -1,25 +1,14 @@
 
-import { Heart } from 'lucide-react';
+import React from 'react';
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
-  
   return (
-    <footer className="bg-black py-8 border-t border-white/10">
+    <footer className="bg-black py-8 text-white/70">
       <div className="container-custom">
         <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="mb-4 md:mb-0">
-            <span className="text-xl font-bold text-white">
-              AJ
-            </span>
-          </div>
-          
-          <div className="text-white/50 flex gap-4 uppercase text-sm tracking-wider">
-            <a href="#" className="hover:text-white transition-colors">E-MAIL</a>
-            <span>/</span>
-            <a href="#" className="hover:text-white transition-colors">LINKEDIN</a>
-            <span>/</span>
-            <a href="#" className="hover:text-white transition-colors">GITHUB</a>
+          <p>© {new Date().getFullYear()} AJ. All rights reserved.</p>
+          <div className="mt-4 md:mt-0">
+            <p>Made with ❤️ by AJ</p>
           </div>
         </div>
       </div>
