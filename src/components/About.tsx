@@ -1,43 +1,42 @@
 
 import { Badge } from '@/components/ui/badge';
-
-type SkillCategory = {
-  title: string;
-  icon: React.ReactNode;
-  skills: string[];
-}
+import IconCloud from './IconCloud';
 
 const About = () => {
-  const skillCategories: SkillCategory[] = [
-    {
-      title: "Programming",
-      icon: <CodeIcon />,
-      skills: ["Python", "Java", "C++", "C#"]
-    },
-    {
-      title: "Cybersecurity",
-      icon: <ShieldIcon />,
-      skills: ["Encryption", "IDS/IPS", "OWASP", "NIST", "Networking", "Metasploit", "Linux", "Secure Software Development"]
-    },
-    {
-      title: "Front-End",
-      icon: <LayoutIcon />,
-      skills: ["HTML5", "CSS3", "React", "TailwindCSS", "Angular", "Next.js", "Redux", "Node.js"]
-    },
-    {
-      title: "Cloud & DevOps",
-      icon: <CloudIcon />,
-      skills: ["AWS", "Docker", "Kubernetes", "GCP", "CI/CD"]
-    }
+  const techIcons = [
+    "typescript",
+    "javascript",
+    "dart",
+    "java",
+    "react",
+    "flutter",
+    "android",
+    "html5",
+    "css3",
+    "nodedotjs",
+    "express",
+    "nextdotjs",
+    "amazonaws",
+    "postgresql",
+    "vercel",
+    "jest",
+    "cypress",
+    "docker",
+    "git",
+    "jira",
+    "github",
+    "visualstudiocode",
+    "androidstudio",
+    "sonarqube",
+    "figma"
   ];
 
   return (
     <section id="about" className="bg-black">
       <div className="container-custom">
-        <h2 className="section-heading">About Me</h2>
-        
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
           <div>
+            <h2 className="section-heading">About Me</h2>
             <p className="text-white/80 text-lg leading-relaxed mb-8">
               Grad student. Python dev. Cybersecurity rookie. ML tinkerer. I'm Apoorva Jain, stitching hardware grit with software finesse at CSUF. My thesis? Using BCI to smash gaming barriers for the visually impaired.
             </p>
@@ -47,65 +46,13 @@ const About = () => {
           </div>
           
           <div>
-            <h3 className="text-2xl font-bold mb-6 text-white">Technical Skills</h3>
-            
-            <div className="space-y-8">
-              {skillCategories.map((category, index) => (
-                <div key={index} className="border border-white/10 rounded-lg p-6 bg-black">
-                  <div className="flex items-center gap-2 mb-4">
-                    <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white">
-                      {category.icon}
-                    </div>
-                    <h4 className="text-xl font-semibold text-white">{category.title}</h4>
-                  </div>
-                  
-                  <div className="flex flex-wrap gap-2">
-                    {category.skills.map((skill, idx) => (
-                      <Badge 
-                        key={idx}
-                        variant="outline" 
-                        className="bg-white/5 hover:bg-white/10 text-white border-white/10"
-                      >
-                        {skill}
-                      </Badge>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
+            <h2 className="section-heading">Technical Skills</h2>
+            <IconCloud icons={techIcons} />
           </div>
         </div>
       </div>
     </section>
   );
 };
-
-// Simple icon components
-const CodeIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <polyline points="16 18 22 12 16 6"></polyline>
-    <polyline points="8 6 2 12 8 18"></polyline>
-  </svg>
-);
-
-const LayoutIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-    <line x1="3" y1="9" x2="21" y2="9"></line>
-    <line x1="9" y1="21" x2="9" y2="9"></line>
-  </svg>
-);
-
-const CloudIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
-  </svg>
-);
-
-const ShieldIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-  </svg>
-);
 
 export default About;

@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowDown } from 'lucide-react';
@@ -142,7 +141,7 @@ const Hero = () => {
             </div>
           </div>
           <div className="md:col-span-2">
-            <h3 className="text-3xl font-medium text-white mb-3 h-10">
+            <h3 className="text-xl font-medium text-white mb-3 h-8">
               {currentGreeting}<span className="animate-pulse">|</span>
             </h3>
             <p className="text-white/80 text-lg tracking-wide leading-relaxed">

@@ -59,8 +59,8 @@ const Header = () => {
                   className={cn(
                     "text-sm uppercase tracking-wider transition-colors",
                     activeSection === item.id
-                      ? "text-[#eee]"
-                      : "text-[#eee]/70 hover:text-[#eee]"
+                      ? "text-[#f8f8f8]"
+                      : "text-[#f8f8f8]/70 hover:text-[#f8f8f8]"
                   )}
                 >
                   {item.label}
