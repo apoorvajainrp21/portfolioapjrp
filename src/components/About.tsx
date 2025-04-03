@@ -1,36 +1,8 @@
 
 import { Badge } from '@/components/ui/badge';
-import IconCloud from './IconCloud';
+import { IconCloudDemo } from './ui/icon-cloud-demo';
 
 const About = () => {
-  const techIcons = [
-    "typescript",
-    "javascript",
-    "dart",
-    "java",
-    "react",
-    "flutter",
-    "android",
-    "html5",
-    "css3",
-    "nodedotjs",
-    "express",
-    "nextdotjs",
-    "amazonaws",
-    "postgresql",
-    "vercel",
-    "jest",
-    "cypress",
-    "docker",
-    "git",
-    "jira",
-    "github",
-    "visualstudiocode",
-    "androidstudio",
-    "sonarqube",
-    "figma"
-  ];
-
   return (
     <section id="about" className="bg-black">
       <div className="container-custom">
@@ -47,7 +19,7 @@ const About = () => {
           
           <div>
             <h2 className="section-heading">Technical Skills</h2>
-            <IconCloud icons={techIcons} />
+            <IconCloudDemo />
           </div>
         </div>
       </div>

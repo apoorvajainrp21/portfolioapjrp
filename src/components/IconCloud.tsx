@@ -1,13 +1,6 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
-import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry';
-import { FontLoader } from 'three/examples/jsm/loaders/FontLoader';
-
-interface TechIcon {
-  name: string;
-  icon: string;
-}
 
 interface IconCloudProps {
   icons: string[];
