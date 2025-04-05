@@ -122,46 +122,7 @@
   @apply text-5xl md:text-7xl lg:text-8xl font-bold uppercase tracking-tighter;
 }
 
-.scroll-indicator {
-  width: 30px;
-  height: 30px;
-  border: 2px solid rgba(255, 255, 255, 0.5);
-  border-radius: 50%;
-  position: relative;
+.scale-85 {
+  transform: scale(0.85);
 }
 
-[data-theme="light"] .scroll-indicator {
-  border: 2px solid rgba(0, 0, 0, 0.5);
-}
-
-.scroll-indicator:after {
-  content: '';
-  width: 8px;
-  height: 8px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(45deg);
-  border-right: 2px solid rgba(255, 255, 255, 0.5);
-  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
-  animation: arrow-down 1.5s infinite;
-}
-
-[data-theme="light"] .scroll-indicator:after {
-  border-right: 2px solid rgba(0, 0, 0, 0.5);
-  border-bottom: 2px solid rgba(0, 0, 0, 0.5);
-}
-
-@keyframes arrow-down {
-  0% {
-    transform: translate(-50%, -80%) rotate(45deg);
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    transform: translate(-50%, -20%) rotate(45deg);
-    opacity: 0;
-  }
-}

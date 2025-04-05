@@ -1,10 +1,17 @@
 
 import ContactForm from './contact/ContactForm';
 import ContactInfo from './contact/ContactInfo';
+import { useTheme } from 'next-themes';
 
 const Contact = () => {
+  const { theme } = useTheme();
+  
   return (
-    <section id="contact" className="bg-black">
+    <section 
+      id="contact" 
+      className={theme === 'dark' ? 'bg-black' : 'bg-white'}
+      data-theme={theme}
+    >
       <div className="container-custom">
         <h2 className="section-heading">Contact Me</h2>
         

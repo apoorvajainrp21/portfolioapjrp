@@ -3,10 +3,10 @@ import { IconCloudDemo } from './ui/icon-cloud-demo';
 
 const About = () => {
   return (
-    <section id="about" className="py-12">
+    <section id="about" className="py-8">
       <div className="container-custom mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-          <div className="max-w-xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+          <div className="max-w-xl px-[25px]">
             <h2 className="section-heading">About Me</h2>
             
             <img 
@@ -25,7 +25,7 @@ const About = () => {
           
           <div>
             <h2 className="section-heading text-2xl md:text-4xl">Technical Skills</h2>
-            <div className="scale-90">
+            <div className="scale-85 -mt-6">
               <IconCloudDemo />
             </div>
           </div>

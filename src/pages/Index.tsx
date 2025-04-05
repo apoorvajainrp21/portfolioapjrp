@@ -11,16 +11,25 @@ import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 
 const Index = () => {
-  const { theme } = useTheme();
+  const { theme, setTheme } = useTheme();
   
   useEffect(() => {
-    // Apply or remove 'light' class to body based on theme
-    if (theme === 'dark') {
+    // Get theme from localStorage or default to 'dark'
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    setTheme(savedTheme);
+    
+    // Apply data-theme attribute to document element
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    
+    // Apply or remove classes based on theme
+    if (savedTheme === 'dark') {
       document.body.classList.remove('light');
+      document.body.classList.add('dark');
     } else {
+      document.body.classList.remove('dark');
       document.body.classList.add('light');
     }
-  }, [theme]);
+  }, [theme, setTheme]);
   
   return (
     <div className="relative" data-theme={theme}>

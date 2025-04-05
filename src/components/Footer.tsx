@@ -1,5 +1,5 @@
 
-import { ContactData } from '@/data/content';
+import { contactData } from '@/data/content';
 import { Github, Linkedin, Twitter } from 'lucide-react';
 
 const Footer = () => {
@@ -9,7 +9,7 @@ const Footer = () => {
     <footer className="py-6 border-t border-foreground/10">
       <div className="container-custom">
         <div className="flex flex-col md:flex-row items-center justify-center gap-4">
-          <div className="text-foreground/70 text-sm">
+          <div className="text-foreground/70 text-sm text-center">
             © {currentYear} All rights reserved.
           </div>
           

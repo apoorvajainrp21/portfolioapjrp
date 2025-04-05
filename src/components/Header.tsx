@@ -16,17 +16,16 @@ const Header = () => {
   const { theme } = useTheme();
 
   const navItems = [
-    { id: 'about', label: 'ABOUT', icon: User, type: "tab" as const },
-    { id: 'education', label: 'EDUCATION', icon: BookOpen, type: "tab" as const },
-    { id: 'experience', label: 'EXPERIENCE', icon: Briefcase, type: "tab" as const },
-    { id: 'projects', label: 'PROJECTS', icon: Code, type: "tab" as const },
-    { id: 'contact', label: 'CONTACT', icon: Mail, type: "tab" as const }
+    { title: "ABOUT", icon: User, id: 'about' },
+    { title: "EDUCATION", icon: BookOpen, id: 'education' },
+    { title: "EXPERIENCE", icon: Briefcase, id: 'experience' },
+    { title: "PROJECTS", icon: Code, id: 'projects' },
+    { title: "CONTACT", icon: Mail, id: 'contact' }
   ];
 
   const tabs = navItems.map(item => ({
-    title: item.label,
-    icon: item.icon,
-    type: "tab" as const
+    title: item.title,
+    icon: item.icon
   }));
 
   useEffect(() => {
@@ -54,7 +53,7 @@ const Header = () => {
   }, []);
 
   const handleExpandableTabChange = (index: number | null) => {
-    if (index !== null) {
+    if (index !== null && index >= 0 && index < navItems.length) {
       const sectionId = navItems[index].id;
       document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
     }
@@ -123,7 +122,7 @@ const Header = () => {
               <ExpandableTabs 
                 tabs={tabs} 
                 activeColor="text-foreground"
-                className="border-foreground/10" 
+                className="border-foreground/10"
                 onChange={handleExpandableTabChange}
               />
               <ThemeToggle />
