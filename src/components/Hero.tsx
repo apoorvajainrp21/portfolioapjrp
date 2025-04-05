@@ -1,6 +1,5 @@
 
 import { useState, useEffect, useRef } from 'react';
-import { Button } from '@/components/ui/button';
 import { ArrowDown } from 'lucide-react';
 import * as THREE from 'three';
 
@@ -142,24 +141,14 @@ const Hero = () => {
             </div>
           </div>
           <div className="md:col-span-2">
-            <h3 className="text-xl font-medium text-white mb-3 h-8">
+            <h3 className="text-xl font-medium mb-3 h-8">
               {currentGreeting}<span className="animate-pulse">|</span>
             </h3>
-            <p className="text-white/80 text-lg tracking-wide leading-relaxed">
+            <p className="text-foreground/80 text-lg tracking-wide leading-relaxed">
               Blending hardware expertise with software innovation. From circuit boards to secure code, I love designing and securing technologies that balance resilience with revolution.
             </p>
           </div>
         </div>
-      </div>
-      
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 hidden md:flex">
-        <a 
-          href="#education" 
-          className="text-white/50 hover:text-white transition-colors"
-          aria-label="Scroll down"
-        >
-          <ArrowDown size={24} />
-        </a>
       </div>
     </section>
   );

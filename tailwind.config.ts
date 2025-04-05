@@ -2,7 +2,7 @@
 import type { Config } from "tailwindcss";
 
 export default {
-	darkMode: ["class"],
+	darkMode: ["class", '[data-theme="dark"]'],
 	content: [
 		"./pages/**/*.{ts,tsx}",
 		"./components/**/*.{ts,tsx}",
@@ -108,17 +108,17 @@ export default {
 				'fade-in': 'fade-in 0.5s ease-out forwards',
 				'slide-up': 'slide-up 0.5s ease-out forwards'
 			},
-      fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-      },
-      letterSpacing: {
-        tighter: '-.05em',
-        tight: '-.025em',
-        normal: '0',
-        wide: '.025em',
-        wider: '.05em',
-        widest: '.1em',
-      },
+            fontFamily: {
+                sans: ['Inter', 'sans-serif'],
+            },
+            letterSpacing: {
+                tighter: '-.05em',
+                tight: '-.025em',
+                normal: '0',
+                wide: '.025em',
+                wider: '.05em',
+                widest: '.1em',
+            },
 		}
 	},
 	plugins: [require("tailwindcss-animate")],

@@ -1,4 +1,6 @@
 
+import { useEffect } from 'react';
+import { useTheme } from 'next-themes';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
@@ -9,8 +11,19 @@ import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 
 const Index = () => {
+  const { theme } = useTheme();
+  
+  useEffect(() => {
+    // Apply or remove 'light' class to body based on theme
+    if (theme === 'dark') {
+      document.body.classList.remove('light');
+    } else {
+      document.body.classList.add('light');
+    }
+  }, [theme]);
+  
   return (
-    <div className="relative bg-black">
+    <div className="relative" data-theme={theme}>
       <Header />
       <main className="overflow-hidden">
         <Hero />

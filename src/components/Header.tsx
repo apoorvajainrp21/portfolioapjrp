@@ -3,27 +3,30 @@ import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { MenuContainer, MenuItem } from '@/components/ui/fluid-menu';
-import { Menu as MenuIcon, X, Home, User, BookOpen, Briefcase, Code, Mail } from 'lucide-react';
+import { Menu as MenuIcon, X, User, BookOpen, Briefcase, Code, Mail } from 'lucide-react';
 import { ExpandableTabs } from '@/components/ui/expandable-tabs';
 import { ThemeToggle } from '@/components/ui/theme-toggle';
+import { useTheme } from 'next-themes';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [isExpanded, setIsExpanded] = useState(false);
   const isMobile = useIsMobile();
+  const { theme } = useTheme();
 
   const navItems = [
-    { id: 'about', label: 'ABOUT', icon: User },
-    { id: 'education', label: 'EDUCATION', icon: BookOpen },
-    { id: 'experience', label: 'EXPERIENCE', icon: Briefcase },
-    { id: 'projects', label: 'PROJECTS', icon: Code },
-    { id: 'contact', label: 'CONTACT', icon: Mail }
+    { id: 'about', label: 'ABOUT', icon: User, type: "tab" as const },
+    { id: 'education', label: 'EDUCATION', icon: BookOpen, type: "tab" as const },
+    { id: 'experience', label: 'EXPERIENCE', icon: Briefcase, type: "tab" as const },
+    { id: 'projects', label: 'PROJECTS', icon: Code, type: "tab" as const },
+    { id: 'contact', label: 'CONTACT', icon: Mail, type: "tab" as const }
   ];
 
   const tabs = navItems.map(item => ({
     title: item.label,
-    icon: item.icon
+    icon: item.icon,
+    type: "tab" as const
   }));
 
   useEffect(() => {
@@ -71,16 +74,16 @@ const Header = () => {
     <header 
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-6",
-        isScrolled ? "bg-black/90 backdrop-blur-sm" : "bg-transparent",
-        "body.light:bg-white/90 body.light:backdrop-blur-sm"
+        isScrolled ? "bg-background/90 backdrop-blur-sm" : "bg-transparent",
       )}
+      data-theme={theme}
     >
       <div className="container-custom">
         <nav className="flex items-center justify-between">
-          <a href="#home" className="text-xl font-bold text-[#f8f8f8]">
+          <a href="#home" className="text-xl font-bold text-foreground">
             {activeSection === 'home' ? (
               <span>
-                <span className="font-normal">APOORVA</span>{" "}
+                <span className="font-light">APOORVA</span>{" "}
                 <span className="font-bold">JAIN</span>
               </span>
             ) : (
@@ -119,8 +122,8 @@ const Header = () => {
             <div className="flex items-center gap-6">
               <ExpandableTabs 
                 tabs={tabs} 
-                activeColor="text-[#f8f8f8]"
-                className="border-[#f8f8f8]/10 bg-black/50" 
+                activeColor="text-foreground"
+                className="border-foreground/10" 
                 onChange={handleExpandableTabChange}
               />
               <ThemeToggle />

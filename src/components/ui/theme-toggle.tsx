@@ -1,8 +1,9 @@
 
 "use client"
 
-import { useState, useEffect } from "react"
+import { useEffect } from "react"
 import { Moon, Sun } from "lucide-react"
+import { useTheme } from "next-themes"
 import { cn } from "@/lib/utils"
 
 interface ThemeToggleProps {
@@ -10,27 +11,18 @@ interface ThemeToggleProps {
 }
 
 export function ThemeToggle({ className }: ThemeToggleProps) {
-  const [isDark, setIsDark] = useState(true)
-
-  useEffect(() => {
-    // Apply or remove 'light' class to body based on theme
-    if (isDark) {
-      document.body.classList.remove('light');
-    } else {
-      document.body.classList.add('light');
-    }
-  }, [isDark]);
-
+  const { theme, setTheme } = useTheme()
+  
   return (
     <div
       className={cn(
         "flex w-14 h-7 p-1 rounded-full cursor-pointer transition-all duration-300",
-        isDark 
+        theme === "dark" 
           ? "bg-zinc-950 border border-zinc-800" 
           : "bg-white border border-zinc-200",
         className
       )}
-      onClick={() => setIsDark(!isDark)}
+      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
       role="button"
       tabIndex={0}
     >
@@ -38,12 +30,12 @@ export function ThemeToggle({ className }: ThemeToggleProps) {
         <div
           className={cn(
             "flex justify-center items-center w-5 h-5 rounded-full transition-transform duration-300",
-            isDark 
+            theme === "dark" 
               ? "transform translate-x-0 bg-zinc-800" 
               : "transform translate-x-7 bg-gray-200"
           )}
         >
-          {isDark ? (
+          {theme === "dark" ? (
             <Moon 
               className="w-3 h-3 text-white" 
               strokeWidth={1.5}
@@ -51,26 +43,6 @@ export function ThemeToggle({ className }: ThemeToggleProps) {
           ) : (
             <Sun 
               className="w-3 h-3 text-gray-700" 
-              strokeWidth={1.5}
-            />
-          )}
-        </div>
-        <div
-          className={cn(
-            "flex justify-center items-center w-5 h-5 rounded-full transition-transform duration-300",
-            isDark 
-              ? "bg-transparent" 
-              : "transform -translate-x-7"
-          )}
-        >
-          {isDark ? (
-            <Sun 
-              className="w-3 h-3 text-gray-500" 
-              strokeWidth={1.5}
-            />
-          ) : (
-            <Moon 
-              className="w-3 h-3 text-black" 
               strokeWidth={1.5}
             />
           )}
