@@ -7,22 +7,22 @@ import { useOnClickOutside } from "usehooks-ts";
 import { cn } from "@/lib/utils";
 import { LucideIcon } from "lucide-react";
 
-interface Tab {
+interface TabWithTitle {
   title: string;
   icon: LucideIcon;
   type?: never;
 }
 
-interface Separator {
+interface TabSeparator {
   type: "separator";
   title?: never;
   icon?: never;
 }
 
-type TabItem = Tab | Separator;
+type TabItem = TabWithTitle | TabSeparator;
 
 interface ExpandableTabsProps {
-  tabs: TabItem[];
+  tabs: (TabWithTitle | TabSeparator)[];
   className?: string;
   activeColor?: string;
   onChange?: (index: number | null) => void;
@@ -68,7 +68,7 @@ export function ExpandableTabs({
     onChange?.(index);
   };
 
-  const Separator = () => (
+  const SeparatorComponent = () => (
     <div className="mx-1 h-[24px] w-[1.2px] bg-border" aria-hidden="true" />
   );
 
@@ -81,14 +81,17 @@ export function ExpandableTabs({
       )}
     >
       {tabs.map((tab, index) => {
-        if (tab.type === "separator") {
-          return <Separator key={`separator-${index}`} />;
+        if ('type' in tab && tab.type === "separator") {
+          return <SeparatorComponent key={`separator-${index}`} />;
         }
 
-        const Icon = tab.icon;
+        // Now TypeScript knows this is TabWithTitle
+        const tabWithTitle = tab as TabWithTitle;
+        const Icon = tabWithTitle.icon;
+        
         return (
           <motion.button
-            key={tab.title}
+            key={tabWithTitle.title}
             variants={buttonVariants}
             initial={false}
             animate="animate"
@@ -113,7 +116,7 @@ export function ExpandableTabs({
                   transition={transition}
                   className="overflow-hidden"
                 >
-                  {tab.title}
+                  {tabWithTitle.title}
                 </motion.span>
               )}
             </AnimatePresence>
