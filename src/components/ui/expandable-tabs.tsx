@@ -10,7 +10,7 @@ import { LucideIcon } from "lucide-react";
 interface TabWithTitle {
   title: string;
   icon: LucideIcon;
-  type?: never;
+  type: "tab";
 }
 
 interface TabSeparator {
@@ -22,7 +22,7 @@ interface TabSeparator {
 type TabItem = TabWithTitle | TabSeparator;
 
 interface ExpandableTabsProps {
-  tabs: TabItem[];
+  tabs: (TabWithTitle | TabSeparator)[];
   className?: string;
   activeColor?: string;
   onChange?: (index: number | null) => void;
@@ -81,7 +81,7 @@ export function ExpandableTabs({
       )}
     >
       {tabs.map((tab, index) => {
-        if ('type' in tab && tab.type === "separator") {
+        if (tab.type === "separator") {
           return <SeparatorComponent key={`separator-${index}`} />;
         }
 

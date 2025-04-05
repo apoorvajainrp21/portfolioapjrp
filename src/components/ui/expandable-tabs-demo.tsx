@@ -3,14 +3,14 @@ import { Bell, Home, HelpCircle, Settings, Shield, Mail, User, FileText } from "
 import { ExpandableTabs } from "@/components/ui/expandable-tabs";
 
 function DefaultDemo() {
-  // Explicitly define the separator with type property
+  // Define tabs with correct type declarations
   const tabs = [
-    { title: "Dashboard", icon: Home },
-    { title: "Notifications", icon: Bell },
-    { type: "separator" } as const, // Use 'as const' to make TypeScript understand this is a literal
-    { title: "Settings", icon: Settings },
-    { title: "Support", icon: HelpCircle },
-    { title: "Security", icon: Shield },
+    { title: "Dashboard", icon: Home, type: "tab" } as const,
+    { title: "Notifications", icon: Bell, type: "tab" } as const,
+    { type: "separator" } as const, 
+    { title: "Settings", icon: Settings, type: "tab" } as const,
+    { title: "Support", icon: HelpCircle, type: "tab" } as const,
+    { title: "Security", icon: Shield, type: "tab" } as const,
   ];
 
   return (
@@ -21,13 +21,13 @@ function DefaultDemo() {
 }
 
 function CustomColorDemo() {
-  // Explicitly define the separator with type property
+  // Define tabs with correct type declarations
   const tabs = [
-    { title: "About", icon: User },
-    { title: "Contact me", icon: Mail },
-    { type: "separator" } as const, // Use 'as const' to make TypeScript understand this is a literal
-    { title: "Experience", icon: FileText },
-    { title: "Projects", icon: User },
+    { title: "About", icon: User, type: "tab" } as const,
+    { title: "Contact me", icon: Mail, type: "tab" } as const,
+    { type: "separator" } as const,
+    { title: "Experience", icon: FileText, type: "tab" } as const,
+    { title: "Projects", icon: User, type: "tab" } as const,
   ];
 
   return (
