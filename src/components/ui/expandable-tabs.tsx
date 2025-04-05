@@ -22,7 +22,7 @@ interface TabSeparator {
 type TabItem = TabWithTitle | TabSeparator;
 
 interface ExpandableTabsProps {
-  tabs: (TabWithTitle | TabSeparator)[];
+  tabs: TabItem[];
   className?: string;
   activeColor?: string;
   onChange?: (index: number | null) => void;
@@ -85,13 +85,10 @@ export function ExpandableTabs({
           return <SeparatorComponent key={`separator-${index}`} />;
         }
 
-        // Now TypeScript knows this is TabWithTitle
-        const tabWithTitle = tab as TabWithTitle;
-        const Icon = tabWithTitle.icon;
-        
+        const Icon = tab.icon;
         return (
           <motion.button
-            key={tabWithTitle.title}
+            key={index}
             variants={buttonVariants}
             initial={false}
             animate="animate"
@@ -116,7 +113,7 @@ export function ExpandableTabs({
                   transition={transition}
                   className="overflow-hidden"
                 >
-                  {tabWithTitle.title}
+                  {tab.title}
                 </motion.span>
               )}
             </AnimatePresence>

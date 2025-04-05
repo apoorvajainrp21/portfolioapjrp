@@ -62,17 +62,30 @@ const Header = () => {
     setIsExpanded(false);
   };
 
+  // Hide header when in contact section
+  if (activeSection === 'contact') {
+    return null;
+  }
+
   return (
     <header 
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-6",
-        isScrolled ? "bg-black/90 backdrop-blur-sm" : "bg-transparent"
+        isScrolled ? "bg-black/90 backdrop-blur-sm" : "bg-transparent",
+        "body.light:bg-white/90 body.light:backdrop-blur-sm"
       )}
     >
       <div className="container-custom">
         <nav className="flex items-center justify-between">
           <a href="#home" className="text-xl font-bold text-[#f8f8f8]">
-            {activeSection === 'home' ? 'Apoorva Jain' : 'AJ'}
+            {activeSection === 'home' ? (
+              <span>
+                <span className="font-normal">APOORVA</span>{" "}
+                <span className="font-bold">JAIN</span>
+              </span>
+            ) : (
+              <span className="font-bold">AJ</span>
+            )}
           </a>
           
           {isMobile ? (

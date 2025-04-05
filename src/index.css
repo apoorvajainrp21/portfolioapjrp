@@ -27,12 +27,38 @@
     --radius: 0.75rem;
   }
 
+  .light {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5.9% 10%;
+  }
+
   * {
     @apply border-border;
   }
 
   body {
     @apply bg-black text-white font-sans;
+  }
+
+  body.light {
+    @apply bg-white text-black;
   }
 
   html {
@@ -51,13 +77,37 @@
     @apply text-3xl md:text-5xl font-bold mb-8 relative uppercase text-white;
   }
 
+  body.light .section-heading {
+    @apply text-black;
+  }
+
   .section-heading::after {
     content: "";
     @apply block w-16 h-0.5 bg-white mt-3;
   }
+
+  body.light .section-heading::after {
+    @apply bg-black;
+  }
   
   h1, h2, h3, h4, h5, h6, p, span, a {
     @apply text-white;
+  }
+
+  body.light h1, 
+  body.light h2, 
+  body.light h3, 
+  body.light h4, 
+  body.light h5, 
+  body.light h6, 
+  body.light p, 
+  body.light span, 
+  body.light a {
+    @apply text-black;
+  }
+  
+  .text-red-500 {
+    @apply text-red-500;
   }
 }
 
@@ -72,12 +122,20 @@
   @apply text-5xl md:text-7xl lg:text-8xl font-bold uppercase tracking-tighter text-white;
 }
 
+body.light .text-giant {
+  @apply text-black;
+}
+
 .scroll-indicator {
   width: 30px;
   height: 30px;
   border: 2px solid rgba(255, 255, 255, 0.5);
   border-radius: 50%;
   position: relative;
+}
+
+.body.light .scroll-indicator {
+  border: 2px solid rgba(0, 0, 0, 0.5);
 }
 
 .scroll-indicator:after {
@@ -91,6 +149,11 @@
   border-right: 2px solid rgba(255, 255, 255, 0.5);
   border-bottom: 2px solid rgba(255, 255, 255, 0.5);
   animation: arrow-down 1.5s infinite;
+}
+
+body.light .scroll-indicator:after {
+  border-right: 2px solid rgba(0, 0, 0, 0.5);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.5);
 }
 
 @keyframes arrow-down {

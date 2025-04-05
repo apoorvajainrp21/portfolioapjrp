@@ -9,17 +9,26 @@ const About = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
           <div>
             <h2 className="section-heading">About Me</h2>
-            <p className="text-white/80 text-lg leading-relaxed mb-8">
+            
+            <img 
+              src="/lovable-uploads/5fb2b019-da1a-4439-9f50-69770169de8c.png" 
+              alt="Apoorva Jain" 
+              className="w-full h-auto object-cover mb-6 rounded-lg"
+            />
+            
+            <p className="text-white/80 text-lg leading-relaxed mb-8 text-justify">
               Grad student. Python dev. Cybersecurity rookie. ML tinkerer. I'm Apoorva Jain, stitching hardware grit with software finesse at CSUF. My thesis? Using BCI to smash gaming barriers for the visually impaired.
             </p>
-            <p className="text-white/80 text-lg leading-relaxed">
+            <p className="text-white/80 text-lg leading-relaxed text-justify">
               When not securing systems or training algorithms, I'm wielding paintbrushes and badminton rackets with equal fervor. Certifications? Just flexing my love for all things cyber. Let's engineer tech that's as human as it is groundbreaking.
             </p>
           </div>
           
           <div>
-            <h2 className="section-heading">Technical Skills</h2>
-            <IconCloudDemo />
+            <h2 className="section-heading text-3xl md:text-3xl">Technical Skills</h2>
+            <div className="scale-95">
+              <IconCloudDemo />
+            </div>
           </div>
         </div>
       </div>

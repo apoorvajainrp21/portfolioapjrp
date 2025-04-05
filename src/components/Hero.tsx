@@ -1,3 +1,4 @@
+
 import { useState, useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowDown } from 'lucide-react';
@@ -135,7 +136,7 @@ const Hero = () => {
             </h1>
             
             <div className="mt-8 hidden md:block">
-              <a href="#education" className="scroll-down-link" aria-label="Scroll down">
+              <a href="#about" className="scroll-down-link" aria-label="Scroll down">
                 <div className="scroll-indicator"></div>
               </a>
             </div>
