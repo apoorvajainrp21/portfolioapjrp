@@ -27,7 +27,8 @@ const Header = () => {
   const tabs = navItems.map(item => ({
     title: item.title,
     icon: item.icon,
-    type: item.type
+    type: item.type,
+    id: item.id
   }));
 
   useEffect(() => {
@@ -88,19 +89,27 @@ const Header = () => {
       <div className="container-custom">
         <nav className="flex items-center justify-between">
           <a href="#home" className="text-xl font-bold text-foreground">
-            {activeSection === 'home' ? (
+            {isMobile ? (
               <span>
                 <span className="font-light">APOORVA</span>{" "}
                 <span className="font-bold">JAIN</span>
               </span>
             ) : (
-              <span className="font-bold">AJ</span>
+              activeSection === 'home' ? (
+                <span>
+                  <span className="font-light">APOORVA</span>{" "}
+                  <span className="font-bold">JAIN</span>
+                </span>
+              ) : (
+                <span className="font-bold">AJ</span>
+              )
             )}
           </a>
           
           {isMobile ? (
             <div className="flex items-center gap-4">
-              <ThemeToggle />
+              {/* Show theme toggle only when in hero section for mobile */}
+              {activeSection === 'home' && <ThemeToggle />}
               
               <div className="fixed bottom-6 right-6 z-50">
                 <FloatingActionMenu
@@ -126,7 +135,7 @@ const Header = () => {
         </nav>
       </div>
       
-      {activeSection === 'home' && (
+      {activeSection === 'home' && !isMobile && (
         <button
           onClick={scrollToNextSection}
           className="fixed bottom-6 left-6 w-10 h-10 rounded-full bg-foreground/10 flex items-center justify-center hover:bg-foreground/20 transition-colors"

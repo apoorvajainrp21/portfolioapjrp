@@ -4,7 +4,7 @@ import { Timeline } from './ui/timeline';
 const Experience = () => {
   const experienceData = [
     {
-      title: "California State University",
+      title: "Instructional Student Assistant",
       content: (
         <div className="bg-background border border-foreground/10 rounded-lg p-6 mb-6">
           <div className="flex items-center gap-3 mb-3">
@@ -14,11 +14,10 @@ const Experience = () => {
               className="w-10 h-10 object-contain"
             />
             <div>
-              <h3 className="text-xl font-bold">Instructional Student Assistant</h3>
-              <p className="text-foreground/70">California State University, Fullerton</p>
+              <h3 className="text-xl font-bold">California State University, Fullerton</h3>
+              <p className="text-foreground/70">Sep 2024 - Present</p>
             </div>
           </div>
-          <p className="text-sm text-foreground/60 mb-3">Sep 2024 - Present</p>
           <p className="text-foreground/80 mb-3">
             As an Instructional Student Assistant at California State University, Fullerton, I supported the delivery of courses in Cyber-Physical Systems Security, Digital Circuit Design, Artificial Intelligence, and Front-End Development. I also assisted students with complex concepts, provided guidance on lab assignments, and graded coursework to ensure students gained industry-relevant skills.
           </p>
@@ -35,7 +34,7 @@ const Experience = () => {
       )
     },
     {
-      title: "Cognizant",
+      title: "Programming Analyst",
       content: (
         <div className="bg-background border border-foreground/10 rounded-lg p-6 mb-6">
           <div className="flex items-center gap-3 mb-3">
@@ -45,11 +44,10 @@ const Experience = () => {
               className="w-10 h-10 object-contain"
             />
             <div>
-              <h3 className="text-xl font-bold">Programming Analyst</h3>
-              <p className="text-foreground/70">Cognizant</p>
+              <h3 className="text-xl font-bold">Cognizant</h3>
+              <p className="text-foreground/70">Nov 2021 - Jul 2023 · Bengaluru, Karnataka, India</p>
             </div>
           </div>
-          <p className="text-sm text-foreground/60 mb-3">Nov 2021 - Jul 2023 · Bengaluru, Karnataka, India</p>
           <p className="text-foreground/80 mb-3">
             In my role as a Programming Analyst at Cognizant, I developed and optimized front-end applications using HTML, CSS, JavaScript, and React to create responsive and user-friendly interfaces. I implemented secure coding practices to mitigate vulnerabilities and collaborated with cross-functional teams to design and integrate secure authentication mechanisms using OAuth and JWT.
           </p>
@@ -67,7 +65,7 @@ const Experience = () => {
       )
     },
     {
-      title: "Pyze",
+      title: "AI/ML Intern",
       content: (
         <div className="bg-background border border-foreground/10 rounded-lg p-6 mb-6">
           <div className="flex items-center gap-3 mb-3">
@@ -77,11 +75,10 @@ const Experience = () => {
               className="w-10 h-10 object-contain"
             />
             <div>
-              <h3 className="text-xl font-bold">AI/ML Intern</h3>
-              <p className="text-foreground/70">Pyze</p>
+              <h3 className="text-xl font-bold">Pyze</h3>
+              <p className="text-foreground/70">Jun 2020 - Nov 2020 · Bengaluru, Karnataka, India</p>
             </div>
           </div>
-          <p className="text-sm text-foreground/60 mb-3">Jun 2020 - Nov 2020 · Bengaluru, Karnataka, India</p>
           <p className="text-foreground/80 mb-3">
             As an AI/ML intern at Pyze Inc., I collaborated with the engineering team to deploy AI solutions and improve model performance through continuous testing and validation. My work involved data preprocessing, feature engineering, and model tuning to achieve higher precision and recall. I actively contributed to optimizing algorithms for better user experience.
           </p>
@@ -98,7 +95,7 @@ const Experience = () => {
       )
     },
     {
-      title: "Uniq Technologies",
+      title: "Embedded Systems Intern",
       content: (
         <div className="bg-background border border-foreground/10 rounded-lg p-6 mb-6">
           <div className="flex items-center gap-3 mb-3">
@@ -108,11 +105,10 @@ const Experience = () => {
               className="w-10 h-10 object-contain"
             />
             <div>
-              <h3 className="text-xl font-bold">Embedded Systems Intern</h3>
-              <p className="text-foreground/70">Uniq Technologies</p>
+              <h3 className="text-xl font-bold">Uniq Technologies</h3>
+              <p className="text-foreground/70">Jan 2020 - Mar 2020 · Bengaluru, Karnataka, India</p>
             </div>
           </div>
-          <p className="text-sm text-foreground/60 mb-3">Jan 2020 - Mar 2020 · Bengaluru, Karnataka, India</p>
           <p className="text-foreground/80 mb-3">
             During my internship at U.N.I.Q Technologies, I focused on developing and optimizing embedded systems for various industrial applications. I collaborated with the engineering team to enhance device communication protocols, improve firmware efficiency, and troubleshoot hardware issues, gaining hands-on experience in the full development cycle of embedded systems.
           </p>
@@ -131,7 +127,7 @@ const Experience = () => {
   ];
   
   return (
-    <section id="experience" className="py-8 px-[15px]">
+    <section id="experience" className="py-8 px-[7px] md:px-[15px]">
       <div className="container-custom">
         <Timeline data={experienceData} />
       </div>

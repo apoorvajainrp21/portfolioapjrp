@@ -79,7 +79,7 @@ const FloatingActionMenu = ({
                       setIsOpen(false); // Close menu after selection
                     }}
                     size="sm"
-                    className="flex items-center gap-2 bg-[#11111198] hover:bg-[#111111d1] shadow-[0_0_20px_rgba(0,0,0,0.2)] border-none rounded-xl backdrop-blur-sm"
+                    className="flex items-center gap-2 bg-[#11111198] hover:bg-[#111111d1] shadow-[0_0_20px_rgba(0,0,0,0.2)] border-none rounded-xl backdrop-blur-sm text-white"
                   >
                     {option.Icon}
                     <span>{option.label}</span>

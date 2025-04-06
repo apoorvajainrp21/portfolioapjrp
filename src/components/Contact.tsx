@@ -9,7 +9,7 @@ const Contact = () => {
   return (
     <section 
       id="contact" 
-      className="bg-background px-[15px]"
+      className="bg-background px-[7px] md:px-[15px]"
       data-theme={theme}
     >
       <div className="container-custom">

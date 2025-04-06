@@ -111,13 +111,6 @@
   }
 }
 
-.wave-background {
-  background-image: url('/lovable-uploads/aacbec6c-6ee4-4004-8862-707887a2e6ea.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
-
 .text-giant {
   @apply text-5xl md:text-7xl lg:text-8xl font-bold uppercase tracking-tighter;
 }
@@ -125,4 +118,3 @@
 .scale-85 {
   transform: scale(0.85);
 }
-

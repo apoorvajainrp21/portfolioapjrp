@@ -23,10 +23,10 @@ const ContactInfo = () => {
           <div>
             <p className={`text-sm ${theme === 'dark' ? 'text-white/50' : 'text-black/50'}`}>Email</p>
             <a 
-              href="mailto:Jainrp.apoorva@gmail.com" 
+              href="mailto:jainrp.apoorva@gmail.com" 
               className={`${textColorClass} ${theme === 'dark' ? 'hover:text-white/80' : 'hover:text-black/80'}`}
             >
-              Jainrp.apoorva@gmail.com
+              jainrp.apoorva@gmail.com
             </a>
           </div>
         </div>

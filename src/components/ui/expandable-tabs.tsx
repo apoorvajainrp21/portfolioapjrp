@@ -7,20 +7,21 @@ import { useOnClickOutside } from "usehooks-ts";
 import { cn } from "@/lib/utils";
 import { LucideIcon } from "lucide-react";
 
-interface Tab {
+export interface Tab {
   title: string;
   icon: LucideIcon;
-  type?: "tab";
+  type?: never;
   id?: string;
 }
 
-interface Separator {
+export interface Separator {
   type: "separator";
-  title?: never;
-  icon?: never;
+  title?: undefined;
+  icon?: undefined;
+  id?: string;
 }
 
-type TabItem = Tab | Separator;
+export type TabItem = Tab | Separator;
 
 interface ExpandableTabsProps {
   tabs: TabItem[];
@@ -86,11 +87,10 @@ export function ExpandableTabs({
           return <Separator key={`separator-${index}`} />;
         }
 
-        // We know it's a Tab if it's not a Separator
         const Icon = tab.icon;
         return (
           <motion.button
-            key={index}
+            key={tab.title}
             variants={buttonVariants}
             initial={false}
             animate="animate"
