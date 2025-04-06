@@ -10,7 +10,7 @@ import { LucideIcon } from "lucide-react";
 interface Tab {
   title: string;
   icon: LucideIcon;
-  type?: never;
+  type?: "tab";
 }
 
 interface Separator {
@@ -85,10 +85,11 @@ export function ExpandableTabs({
           return <Separator key={`separator-${index}`} />;
         }
 
+        // We know it's a Tab if it's not a Separator
         const Icon = tab.icon;
         return (
           <motion.button
-            key={tab.title}
+            key={index}
             variants={buttonVariants}
             initial={false}
             animate="animate"

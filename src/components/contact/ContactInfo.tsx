@@ -1,24 +1,30 @@
 
 import { Mail, MapPin, Github, Linkedin } from 'lucide-react';
+import { useTheme } from 'next-themes';
 
 const ContactInfo = () => {
+  const { theme } = useTheme();
+  const textColorClass = theme === 'dark' ? 'text-white' : 'text-black';
+  const bgColorClass = theme === 'dark' ? 'bg-white/10' : 'bg-black/10';
+  const hoverClass = theme === 'dark' ? 'hover:bg-white/20' : 'hover:bg-black/20';
+  
   return (
     <div className="lg:col-span-2 space-y-6">
-      <h3 className="text-2xl font-bold text-white">Let's Connect</h3>
-      <p className="text-white/80">
+      <h3 className={`text-2xl font-bold ${textColorClass}`}>Let's Connect</h3>
+      <p className={`${theme === 'dark' ? 'text-white/80' : 'text-black/80'}`}>
         Got questions? Curious minds are always welcome—let's chat!
       </p>
       
       <div className="space-y-4 mt-8">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
-            <Mail size={18} className="text-white" />
+          <div className={`w-10 h-10 rounded-full ${bgColorClass} flex items-center justify-center`}>
+            <Mail size={18} className={textColorClass} />
           </div>
           <div>
-            <p className="text-sm text-white/50">Email</p>
+            <p className={`text-sm ${theme === 'dark' ? 'text-white/50' : 'text-black/50'}`}>Email</p>
             <a 
               href="mailto:Jainrp.apoorva@gmail.com" 
-              className="text-white hover:text-white/80"
+              className={`${textColorClass} ${theme === 'dark' ? 'hover:text-white/80' : 'hover:text-black/80'}`}
             >
               Jainrp.apoorva@gmail.com
             </a>
@@ -26,12 +32,12 @@ const ContactInfo = () => {
         </div>
         
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
-            <MapPin size={18} className="text-white" />
+          <div className={`w-10 h-10 rounded-full ${bgColorClass} flex items-center justify-center`}>
+            <MapPin size={18} className={textColorClass} />
           </div>
           <div>
-            <p className="text-sm text-white/50">Location</p>
-            <p className="text-white">Los Angeles, California</p>
+            <p className={`text-sm ${theme === 'dark' ? 'text-white/50' : 'text-black/50'}`}>Location</p>
+            <p className={textColorClass}>Los Angeles, California</p>
           </div>
         </div>
       </div>
@@ -41,16 +47,16 @@ const ContactInfo = () => {
           href="https://github.com/apoorvajainrp21"
           target="_blank"
           rel="noopener noreferrer"
-          className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-colors"
+          className={`w-10 h-10 rounded-full ${bgColorClass} flex items-center justify-center ${textColorClass} ${hoverClass} transition-colors`}
           aria-label="GitHub"
         >
           <Github size={18} />
         </a>
         <a 
-          href="https://apoorvajainrp21.github.io/"
+          href="https://www.linkedin.com/in/apoorvajainrp/"
           target="_blank"
           rel="noopener noreferrer"
-          className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-colors"
+          className={`w-10 h-10 rounded-full ${bgColorClass} flex items-center justify-center ${textColorClass} ${hoverClass} transition-colors`}
           aria-label="LinkedIn"
         >
           <Linkedin size={18} />

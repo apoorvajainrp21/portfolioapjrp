@@ -1,6 +1,7 @@
 
 import { contactData } from '@/data/content';
-import { Github, Linkedin, Twitter } from 'lucide-react';
+import { Github, Linkedin } from 'lucide-react';
+import { useTheme } from 'next-themes';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -24,22 +25,13 @@ const Footer = () => {
               <Linkedin size={18} />
             </a>
             <a 
-              href="https://github.com/" 
+              href="https://github.com/apoorvajainrp21" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-foreground/70 hover:text-foreground transition-colors"
               aria-label="GitHub"
             >
               <Github size={18} />
-            </a>
-            <a 
-              href="https://twitter.com/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-foreground/70 hover:text-foreground transition-colors"
-              aria-label="Twitter"
-            >
-              <Twitter size={18} />
             </a>
           </div>
         </div>

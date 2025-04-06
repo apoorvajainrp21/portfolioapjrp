@@ -8,6 +8,7 @@ import { useTheme } from 'next-themes';
 
 const Projects = () => {
   const { theme } = useTheme();
+  const githubUrl = "https://github.com/apoorvajainrp21";
   
   return (
     <section 
@@ -22,7 +23,11 @@ const Projects = () => {
             <p className="text-foreground/70 text-lg">A curated selection of my web projects.</p>
             
             <div className="mt-8">
-              <Button variant="outline" className="group hover:bg-foreground/5">
+              <Button 
+                variant="outline" 
+                className="group hover:bg-foreground/5"
+                onClick={() => window.open(githubUrl, '_blank')}
+              >
                 See all <ArrowRight className="ml-1 group-hover:translate-x-1 transition-transform" size={16} />
               </Button>
             </div>
@@ -45,7 +50,7 @@ const Projects = () => {
                         theme === 'dark' ? 'border-white/10' : 'border-black/10'
                       }`}>
                         <img 
-                          src={project.image} 
+                          src={index === 0 ? "/lovable-uploads/3a35a36e-2cdb-4738-84c0-f1105340c719.png" : project.image} 
                           alt={project.title} 
                           className="h-full w-full object-cover"
                         />
@@ -75,23 +80,23 @@ const Projects = () => {
                         {project.description}
                       </p>
                       
-                      {project.link && (
-                        <a 
-                          href={project.link} 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="flex items-center gap-1 text-red-500 hover:text-red-400 mt-auto text-sm font-medium group"
-                        >
-                          View Project <ExternalLink size={14} className="transition-transform group-hover:translate-x-1" />
-                        </a>
-                      )}
+                      <a 
+                        href={githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-1 text-red-500 hover:text-red-400 mt-auto text-sm font-medium group"
+                      >
+                        View Project <ExternalLink size={14} className="transition-transform group-hover:translate-x-1" />
+                      </a>
                     </div>
                   </div>
                 ))}
                 
                 <div className="flex justify-center pt-4">
                   <a 
-                    href="#"
+                    href={githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-foreground/60 hover:text-foreground flex items-center gap-2 group"
                   >
                     See more <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />

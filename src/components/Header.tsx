@@ -16,16 +16,17 @@ const Header = () => {
   const { theme } = useTheme();
 
   const navItems = [
-    { title: "ABOUT", icon: User, id: 'about' },
-    { title: "EDUCATION", icon: BookOpen, id: 'education' },
-    { title: "EXPERIENCE", icon: Briefcase, id: 'experience' },
-    { title: "PROJECTS", icon: Code, id: 'projects' },
-    { title: "CONTACT", icon: Mail, id: 'contact' }
+    { title: "ABOUT", icon: User, type: "tab" as const, id: 'about' },
+    { title: "EDUCATION", icon: BookOpen, type: "tab" as const, id: 'education' },
+    { title: "EXPERIENCE", icon: Briefcase, type: "tab" as const, id: 'experience' },
+    { title: "PROJECTS", icon: Code, type: "tab" as const, id: 'projects' },
+    { title: "CONTACT", icon: Mail, type: "tab" as const, id: 'contact' }
   ];
 
   const tabs = navItems.map(item => ({
     title: item.title,
-    icon: item.icon
+    icon: item.icon,
+    type: item.type
   }));
 
   useEffect(() => {
