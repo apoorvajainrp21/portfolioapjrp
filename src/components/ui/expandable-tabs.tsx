@@ -11,6 +11,7 @@ interface Tab {
   title: string;
   icon: LucideIcon;
   type?: "tab";
+  id?: string;
 }
 
 interface Separator {

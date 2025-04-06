@@ -22,7 +22,7 @@ const educationData = [
 
 const Education = () => {
   return (
-    <section id="education" className="py-12">
+    <section id="education" className="py-12 px-[15px]">
       <div className="container-custom">
         <h2 className="section-heading">Education</h2>
         

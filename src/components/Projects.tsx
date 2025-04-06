@@ -13,7 +13,7 @@ const Projects = () => {
   return (
     <section 
       id="projects" 
-      className={theme === 'dark' ? 'bg-black py-24' : 'bg-white py-24'}
+      className="py-24 px-[15px]"
       data-theme={theme}
     >
       <div className="container-custom">
@@ -39,16 +39,10 @@ const Projects = () => {
                 {projectsData.map((project, index) => (
                   <div 
                     key={index} 
-                    className={`grid grid-cols-1 md:grid-cols-3 gap-6 p-6 border rounded-lg transition-all duration-300 ${
-                      theme === 'dark' 
-                        ? 'border-white/10 hover:border-white/20 bg-black' 
-                        : 'border-black/10 hover:border-black/20 bg-white'
-                    }`}
+                    className="grid grid-cols-1 md:grid-cols-3 gap-6 p-6 border rounded-lg transition-all duration-300 border-foreground/10 hover:border-foreground/20 bg-background"
                   >
-                    <div className="md:col-span-1">
-                      <div className={`aspect-square overflow-hidden rounded-md border ${
-                        theme === 'dark' ? 'border-white/10' : 'border-black/10'
-                      }`}>
+                    <div className="md:col-span-1 flex items-center">
+                      <div className="aspect-square overflow-hidden rounded-md border border-foreground/10">
                         <img 
                           src={index === 0 ? "/lovable-uploads/3a35a36e-2cdb-4738-84c0-f1105340c719.png" : project.image} 
                           alt={project.title} 
@@ -69,7 +63,7 @@ const Projects = () => {
                           <Badge 
                             key={idx}
                             variant="outline" 
-                            className={`bg-foreground/5 hover:bg-foreground/10 border-foreground/10`}
+                            className="bg-foreground/5 hover:bg-foreground/10 border-foreground/10"
                           >
                             {tech}
                           </Badge>

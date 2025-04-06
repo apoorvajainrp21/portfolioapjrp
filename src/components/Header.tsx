@@ -3,10 +3,11 @@ import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { MenuContainer, MenuItem } from '@/components/ui/fluid-menu';
-import { Menu as MenuIcon, X, User, BookOpen, Briefcase, Code, Mail } from 'lucide-react';
+import { Menu as MenuIcon, X, User, BookOpen, Briefcase, Code, Mail, ArrowDown } from 'lucide-react';
 import { ExpandableTabs } from '@/components/ui/expandable-tabs';
 import { ThemeToggle } from '@/components/ui/theme-toggle';
 import { useTheme } from 'next-themes';
+import FloatingActionMenu from '@/components/ui/floating-action-menu';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -60,15 +61,21 @@ const Header = () => {
     }
   };
 
-  const handleMenuItemClick = (sectionId: string) => {
+  const handleMobileNavigation = (sectionId: string) => {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
-    setIsExpanded(false);
   };
 
   // Hide header when in contact section
   if (activeSection === 'contact') {
     return null;
   }
+
+  const scrollToNextSection = () => {
+    const aboutSection = document.getElementById('about');
+    if (aboutSection) {
+      aboutSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <header 
@@ -94,28 +101,15 @@ const Header = () => {
           {isMobile ? (
             <div className="flex items-center gap-4">
               <ThemeToggle />
+              
               <div className="fixed bottom-6 right-6 z-50">
-                <MenuContainer>
-                  <MenuItem 
-                    icon={
-                      <div className="relative w-6 h-6">
-                        <div className="absolute inset-0 transition-all duration-300 ease-in-out origin-center opacity-100 scale-100 rotate-0 [div[data-expanded=true]_&]:opacity-0 [div[data-expanded=true]_&]:scale-0 [div[data-expanded=true]_&]:rotate-180">
-                          <MenuIcon size={24} strokeWidth={1.5} />
-                        </div>
-                        <div className="absolute inset-0 transition-all duration-300 ease-in-out origin-center opacity-0 scale-0 -rotate-180 [div[data-expanded=true]_&]:opacity-100 [div[data-expanded=true]_&]:scale-100 [div[data-expanded=true]_&]:rotate-0">
-                          <X size={24} strokeWidth={1.5} />
-                        </div>
-                      </div>
-                    } 
-                  />
-                  {navItems.map((item, index) => (
-                    <MenuItem 
-                      key={item.id}
-                      icon={<item.icon size={24} strokeWidth={1.5} />} 
-                      onClick={() => handleMenuItemClick(item.id)}
-                    />
-                  ))}
-                </MenuContainer>
+                <FloatingActionMenu
+                  options={navItems.map((item) => ({
+                    label: item.title,
+                    Icon: <item.icon className="w-4 h-4" />,
+                    onClick: () => handleMobileNavigation(item.id),
+                  }))}
+                />
               </div>
             </div>
           ) : (
@@ -131,6 +125,16 @@ const Header = () => {
           )}
         </nav>
       </div>
+      
+      {activeSection === 'home' && (
+        <button
+          onClick={scrollToNextSection}
+          className="fixed bottom-6 left-6 w-10 h-10 rounded-full bg-foreground/10 flex items-center justify-center hover:bg-foreground/20 transition-colors"
+          aria-label="Scroll Down"
+        >
+          <ArrowDown className="w-5 h-5 text-foreground" />
+        </button>
+      )}
     </header>
   );
 };

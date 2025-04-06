@@ -49,7 +49,7 @@ const Hero = () => {
   return (
     <section 
       id="home" 
-      className="min-h-screen flex items-center pt-16 pb-0 relative"
+      className="min-h-screen flex items-center pt-16 pb-0 relative px-[15px]"
     >
       <div className="container-custom relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-5 gap-12 items-center">

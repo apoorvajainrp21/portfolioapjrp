@@ -9,7 +9,7 @@ const Contact = () => {
   return (
     <section 
       id="contact" 
-      className={theme === 'dark' ? 'bg-black' : 'bg-white'}
+      className="bg-background px-[15px]"
       data-theme={theme}
     >
       <div className="container-custom">

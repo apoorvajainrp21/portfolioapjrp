@@ -6,11 +6,11 @@ const About = () => {
   const { theme } = useTheme();
   
   return (
-    <section id="about" className="py-8">
-      <div className="container-custom mx-auto px-6">
+    <section id="about" className="py-8 px-[15px]">
+      <div className="container-custom mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
           <div className="max-w-xl px-[25px]">
-            <h2 className="section-heading">About Me</h2>
+            <h2 className="section-heading text-2xl md:text-4xl">About Me</h2>
             
             <img 
               src="/lovable-uploads/5fb2b019-da1a-4439-9f50-69770169de8c.png" 
@@ -26,7 +26,7 @@ const About = () => {
             </p>
           </div>
           
-          <div className={theme === 'dark' ? '' : 'bg-white'}>
+          <div className="bg-transparent">
             <h2 className="section-heading text-2xl md:text-4xl">Technical Skills</h2>
             <div className="scale-85 -mt-6">
               <IconCloudDemo />
