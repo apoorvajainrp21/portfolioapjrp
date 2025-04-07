@@ -19,7 +19,7 @@ const About = () => {
             />
             
             <p className="text-foreground/80 text-base leading-relaxed mb-4 text-justify">
-              Grad student. Python dev. Cybersecurity Enthusiast. AI tinkerer. I'm Apoorva Jain, stitching hardware grit with software finesse at CSUF. My thesis? Using BCI to smash gaming barriers for the visually impaired.
+              Grad student. Python dev. Cybersecurity Enthusiast. AI tinkerer. I'm <span className="text-red-500">Apoorva Jain</span>, stitching hardware grit with software finesse at CSUF. My thesis? Using BCI to smash gaming barriers for the visually impaired.
             </p>
             <p className="text-foreground/80 text-base leading-relaxed text-justify">
               When not securing systems or training algorithms, I'm wielding paintbrushes and badminton rackets with equal fervor. Certifications? Just flexing my love for all things cyber. Let's engineer tech that's as human as it is groundbreaking.

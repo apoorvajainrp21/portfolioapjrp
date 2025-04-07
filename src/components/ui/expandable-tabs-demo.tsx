@@ -6,10 +6,10 @@ import {
   Bot,
   Braces,
   Code,
-  Feed,
   Folder,
   Grid3X3,
   Home,
+  Mail, // Using Mail instead of Feed
   Settings,
   User,
 } from "lucide-react"
@@ -21,7 +21,7 @@ const demoTabs = [
   { title: "Dashboard", icon: Grid3X3, id: "dashboard" },
   { title: "Projects", icon: Folder, id: "projects" },
   { title: "Code", icon: Code, id: "code" },
-  { title: "Feed", icon: Feed, id: "feed" },
+  { title: "Feed", icon: Mail, id: "feed" }, // Changed from Feed to Mail
   { title: "Settings", icon: Settings, id: "settings" },
 ]
 

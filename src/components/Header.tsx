@@ -104,6 +104,7 @@ const Header = () => {
               {/* Show theme toggle only when in hero section for mobile */}
               {activeSection === 'home' && <ThemeToggle />}
               
+              {/* Fixed floating action menu for mobile */}
               <div className="fixed bottom-6 right-6 z-50">
                 <FloatingActionMenu
                   options={navItems.map((item) => ({
@@ -111,6 +112,7 @@ const Header = () => {
                     Icon: <item.icon className="w-4 h-4 text-red-500" />,
                     onClick: () => handleMobileNavigation(item.id),
                   }))}
+                  className={theme === 'dark' ? "bg-white" : ""} // White background in dark theme
                 />
               </div>
             </div>
