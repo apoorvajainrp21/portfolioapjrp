@@ -10,14 +10,13 @@ import { LucideIcon } from "lucide-react";
 export interface Tab {
   title: string;
   icon: LucideIcon;
-  type?: never;
   id?: string;
 }
 
 export interface Separator {
   type: "separator";
-  title?: undefined;
-  icon?: undefined;
+  title?: string;
+  icon?: LucideIcon;
   id?: string;
 }
 

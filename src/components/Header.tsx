@@ -17,17 +17,16 @@ const Header = () => {
   const { theme } = useTheme();
 
   const navItems = [
-    { title: "ABOUT", icon: User, type: "tab" as const, id: 'about' },
-    { title: "EDUCATION", icon: BookOpen, type: "tab" as const, id: 'education' },
-    { title: "EXPERIENCE", icon: Briefcase, type: "tab" as const, id: 'experience' },
-    { title: "PROJECTS", icon: Code, type: "tab" as const, id: 'projects' },
-    { title: "CONTACT", icon: Mail, type: "tab" as const, id: 'contact' }
+    { title: "ABOUT", icon: User, id: 'about' },
+    { title: "EDUCATION", icon: BookOpen, id: 'education' },
+    { title: "EXPERIENCE", icon: Briefcase, id: 'experience' },
+    { title: "PROJECTS", icon: Code, id: 'projects' },
+    { title: "CONTACT", icon: Mail, id: 'contact' }
   ];
 
   const tabs = navItems.map(item => ({
     title: item.title,
     icon: item.icon,
-    type: item.type,
     id: item.id
   }));
 
@@ -89,21 +88,10 @@ const Header = () => {
       <div className="container-custom">
         <nav className="flex items-center justify-between">
           <a href="#home" className="text-xl font-bold text-foreground">
-            {isMobile ? (
-              <span>
-                <span className="font-light">APOORVA</span>{" "}
-                <span className="font-bold">JAIN</span>
-              </span>
-            ) : (
-              activeSection === 'home' ? (
-                <span>
-                  <span className="font-light">APOORVA</span>{" "}
-                  <span className="font-bold">JAIN</span>
-                </span>
-              ) : (
-                <span className="font-bold">AJ</span>
-              )
-            )}
+            <span>
+              <span className="font-light">APOORVA</span>{" "}
+              <span className="font-bold">JAIN</span>
+            </span>
           </a>
           
           {isMobile ? (

@@ -127,7 +127,7 @@ const Experience = () => {
   ];
   
   return (
-    <section id="experience" className="py-8 px-[7px] md:px-[15px]">
+    <section id="experience" className="py-8 px-[4px] md:px-[15px]">
       <div className="container-custom">
         <Timeline data={experienceData} />
       </div>

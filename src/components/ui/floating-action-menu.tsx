@@ -26,8 +26,13 @@ const FloatingActionMenu = ({
     setIsOpen(!isOpen);
   };
 
+  const handleOptionClick = (onClick: () => void) => {
+    onClick();
+    setIsOpen(false); // Close menu after selection
+  };
+
   return (
-    <div className={cn("fixed bottom-8 right-8 z-50", className)}>
+    <div className={cn("fixed bottom-8 right-8", className)}>
       <Button
         onClick={toggleMenu}
         className="w-10 h-10 rounded-full bg-[#11111198] hover:bg-[#111111d1] shadow-[0_0_20px_rgba(0,0,0,0.2)]"
@@ -74,12 +79,9 @@ const FloatingActionMenu = ({
                   }}
                 >
                   <Button
-                    onClick={() => {
-                      option.onClick();
-                      setIsOpen(false); // Close menu after selection
-                    }}
+                    onClick={() => handleOptionClick(option.onClick)}
                     size="sm"
-                    className="flex items-center gap-2 bg-[#11111198] hover:bg-[#111111d1] shadow-[0_0_20px_rgba(0,0,0,0.2)] border-none rounded-xl backdrop-blur-sm text-white"
+                    className="flex items-center gap-2 bg-[#11111198] hover:bg-[#111111d1] shadow-[0_0_20px_rgba(0,0,0,0.2)] border-none rounded-xl backdrop-blur-sm text-red-500"
                   >
                     {option.Icon}
                     <span>{option.label}</span>

@@ -4,34 +4,41 @@ import { IconCloud } from "@/components/ui/interactive-icon-cloud"
 const slugs = [
   "typescript",
   "javascript",
-  "dart",
+  "python",
   "java",
   "react",
-  "flutter",
+  "figma",
   "android",
   "html5",
   "css3",
   "nodedotjs",
   "express",
   "nextdotjs",
+  "wireshark",
   "amazonaws",
   "postgresql",
-  "vercel",
+  "jira",
+  "metasploit",
+  "selenium",
+  "testinglibrary",
   "jest",
   "cypress",
   "docker",
-  "git",
-  "jira",
   "github",
+  "gitlab",
   "visualstudiocode",
   "androidstudio",
   "sonarqube",
-  "figma"
+  "figma", 
+  "matlab", 
+  "unity",
+  "multisim",
+  "kotlin"
 ]
 
 export function IconCloudDemo() {
   return (
-    <div className="relative flex w-full h-full items-center justify-center overflow-hidden bg-black">
+    <div className="relative flex w-full h-full items-center justify-center overflow-hidden bg-transparent">
       <IconCloud iconSlugs={slugs} />
     </div>
   )

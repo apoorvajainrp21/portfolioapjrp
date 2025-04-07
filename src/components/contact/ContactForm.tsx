@@ -60,13 +60,17 @@ const ContactForm = () => {
     }
   };
   
+  const formBorder = theme === 'dark' 
+    ? 'border-zinc-700' 
+    : 'border-black';
+  
   const inputStyles = theme === 'dark'
     ? 'bg-zinc-800/50 border-zinc-700 text-white placeholder:text-zinc-400'
-    : 'bg-white border-gray-300 text-black placeholder:text-gray-500';
+    : 'bg-white border-black text-black placeholder:text-gray-500';
   
   return (
     <div className="lg:col-span-3">
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form onSubmit={handleSubmit} className={`space-y-4 border rounded-md p-6 ${formBorder}`}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
             <label className={`block mb-1 text-sm ${theme === 'dark' ? 'text-white/70' : 'text-black/70'}`}>
@@ -77,7 +81,7 @@ const ContactForm = () => {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              className={`w-full px-4 py-2 rounded-md ${inputStyles} focus:outline-none focus:ring-2 focus:ring-primary/50`}
+              className={`w-full px-4 py-2 rounded-md border ${inputStyles} focus:outline-none focus:ring-2 focus:ring-primary/50`}
               placeholder="Your name"
               required
             />
@@ -92,7 +96,7 @@ const ContactForm = () => {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className={`w-full px-4 py-2 rounded-md ${inputStyles} focus:outline-none focus:ring-2 focus:ring-primary/50`}
+              className={`w-full px-4 py-2 rounded-md border ${inputStyles} focus:outline-none focus:ring-2 focus:ring-primary/50`}
               placeholder="Your email"
               required
             />
@@ -108,7 +112,7 @@ const ContactForm = () => {
             name="subject"
             value={formData.subject}
             onChange={handleChange}
-            className={`w-full px-4 py-2 rounded-md ${inputStyles} focus:outline-none focus:ring-2 focus:ring-primary/50`}
+            className={`w-full px-4 py-2 rounded-md border ${inputStyles} focus:outline-none focus:ring-2 focus:ring-primary/50`}
             placeholder="Message subject"
             required
           />
@@ -123,7 +127,7 @@ const ContactForm = () => {
             value={formData.message}
             onChange={handleChange}
             rows={6}
-            className={`w-full px-4 py-2 rounded-md ${inputStyles} focus:outline-none focus:ring-2 focus:ring-primary/50`}
+            className={`w-full px-4 py-2 rounded-md border ${inputStyles} focus:outline-none focus:ring-2 focus:ring-primary/50`}
             placeholder="Your message"
             required
           />
