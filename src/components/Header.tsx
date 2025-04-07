@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -6,7 +5,6 @@ import { MenuContainer, MenuItem } from '@/components/ui/fluid-menu';
 import { Menu as MenuIcon, X, User, BookOpen, Briefcase, Code, Mail, ArrowDown } from 'lucide-react';
 import { ExpandableTabs } from '@/components/ui/expandable-tabs';
 import { ThemeToggle } from '@/components/ui/theme-toggle';
-import { useTheme } from 'next-themes';
 import FloatingActionMenu from '@/components/ui/floating-action-menu';
 
 const Header = () => {
@@ -32,10 +30,8 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Check if page is scrolled
       setIsScrolled(window.scrollY > 50);
       
-      // Find current active section
       const sections = ['home', 'about', 'education', 'experience', 'projects', 'contact'];
       const sectionElements = sections.map(id => document.getElementById(id));
       
@@ -65,7 +61,6 @@ const Header = () => {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  // Hide header when in contact section
   if (activeSection === 'contact') {
     return null;
   }
@@ -81,10 +76,10 @@ const Header = () => {
     <header 
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        isMobile ? "pt-5" : "py-6", // Add 5px top padding for mobile
+        isMobile ? "pt-5" : "py-6",
         isScrolled ? 
           theme === 'dark' && isMobile ? 
-            "bg-background/40 backdrop-blur-sm" : // 40% transparent for mobile dark theme
+            "bg-background/40 backdrop-blur-sm" : 
             "bg-background/90 backdrop-blur-sm" 
           : "bg-transparent",
       )}
@@ -101,20 +96,7 @@ const Header = () => {
           
           {isMobile ? (
             <div className="flex items-center gap-4">
-              {/* Show theme toggle only when in hero section for mobile */}
               {activeSection === 'home' && <ThemeToggle />}
-              
-              {/* Fixed floating action menu for mobile */}
-              <div className="fixed bottom-6 right-6 z-50">
-                <FloatingActionMenu
-                  options={navItems.map((item) => ({
-                    label: item.title,
-                    Icon: <item.icon className="w-4 h-4 text-red-500" />,
-                    onClick: () => handleMobileNavigation(item.id),
-                  }))}
-                  className={theme === 'dark' ? "bg-white" : ""} // White background in dark theme
-                />
-              </div>
             </div>
           ) : (
             <div className="flex items-center gap-6">
@@ -129,6 +111,19 @@ const Header = () => {
           )}
         </nav>
       </div>
+      
+      {isMobile && (
+        <div className="fixed bottom-6 right-6 z-50">
+          <FloatingActionMenu
+            options={navItems.map((item) => ({
+              label: item.title,
+              Icon: <item.icon className="w-4 h-4 text-red-500" />,
+              onClick: () => handleMobileNavigation(item.id),
+            }))}
+            className={theme === 'dark' ? "bg-white" : ""}
+          />
+        </div>
+      )}
       
       {activeSection === 'home' && !isMobile && (
         <button

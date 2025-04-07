@@ -6,6 +6,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Plus } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useTheme } from "next-themes";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 type FloatingActionMenuProps = {
   options: {
@@ -21,7 +23,9 @@ const FloatingActionMenu = ({
   className,
 }: FloatingActionMenuProps) => {
   const [isOpen, setIsOpen] = useState(false);
-
+  const { theme } = useTheme();
+  const isMobile = useIsMobile();
+  
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
@@ -31,11 +35,16 @@ const FloatingActionMenu = ({
     setIsOpen(false); // Close menu after selection
   };
 
+  // Custom button class for mobile dark theme
+  const buttonClass = isMobile && theme === "dark" 
+    ? "w-10 h-10 rounded-full bg-[#ffffff98] hover:bg-[#ffffffd1] border border-white shadow-[0_0_20px_rgba(0,0,0,0.1)]"
+    : "w-10 h-10 rounded-full bg-[#11111198] hover:bg-[#111111d1] shadow-[0_0_20px_rgba(0,0,0,0.2)]";
+
   return (
     <div className={cn("fixed bottom-8 right-8", className)}>
       <Button
         onClick={toggleMenu}
-        className="w-10 h-10 rounded-full bg-[#11111198] hover:bg-[#111111d1] shadow-[0_0_20px_rgba(0,0,0,0.2)]"
+        className={buttonClass}
       >
         <motion.div
           animate={{ rotate: isOpen ? 45 : 0 }}
