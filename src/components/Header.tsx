@@ -80,8 +80,13 @@ const Header = () => {
   return (
     <header 
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-6",
-        isScrolled ? "bg-background/90 backdrop-blur-sm" : "bg-transparent",
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        isMobile ? "pt-5" : "py-6", // Add 5px top padding for mobile
+        isScrolled ? 
+          theme === 'dark' && isMobile ? 
+            "bg-background/40 backdrop-blur-sm" : // 40% transparent for mobile dark theme
+            "bg-background/90 backdrop-blur-sm" 
+          : "bg-transparent",
       )}
       data-theme={theme}
     >
@@ -103,7 +108,7 @@ const Header = () => {
                 <FloatingActionMenu
                   options={navItems.map((item) => ({
                     label: item.title,
-                    Icon: <item.icon className="w-4 h-4" />,
+                    Icon: <item.icon className="w-4 h-4 text-red-500" />,
                     onClick: () => handleMobileNavigation(item.id),
                   }))}
                 />
