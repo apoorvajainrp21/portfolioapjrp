@@ -35,16 +35,17 @@ const FloatingActionMenu = ({
     setIsOpen(false); // Close menu after selection
   };
 
-  // Custom button class for mobile dark theme
+  // Updated button class to ensure circular shape in dark mode mobile view
   const buttonClass = isMobile && theme === "dark" 
-    ? "w-10 h-10 rounded-full bg-[#ffffff98] hover:bg-[#ffffffd1] border border-white shadow-[0_0_20px_rgba(0,0,0,0.1)]"
-    : "w-10 h-10 rounded-full bg-[#11111198] hover:bg-[#111111d1] shadow-[0_0_20px_rgba(0,0,0,0.2)]";
+    ? "w-12 h-12 rounded-full bg-[#ffffff98] hover:bg-[#ffffffd1] border border-white shadow-[0_0_20px_rgba(0,0,0,0.1)] flex items-center justify-center"
+    : "w-12 h-12 rounded-full bg-[#11111198] hover:bg-[#111111d1] shadow-[0_0_20px_rgba(0,0,0,0.2)] flex items-center justify-center";
 
   return (
     <div className={cn("fixed bottom-8 right-8", className)}>
       <Button
         onClick={toggleMenu}
         className={buttonClass}
+        aria-label="Toggle menu"
       >
         <motion.div
           animate={{ rotate: isOpen ? 45 : 0 }}
