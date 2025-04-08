@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -75,44 +74,56 @@ const Header = () => {
   };
 
   return (
-    <header 
-      className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        isMobile ? "pt-5" : "py-6",
-        isScrolled ? 
-          theme === 'dark' && isMobile ? 
-            "bg-background/40 backdrop-blur-sm" : 
-            "bg-background/90 backdrop-blur-sm" 
-          : "bg-transparent",
-      )}
-      data-theme={theme}
-    >
-      <div className="container-custom">
-        <nav className="flex items-center justify-between">
-          <a href="#home" className="text-xl font-bold text-foreground">
-            <span>
-              <span className="font-light">APOORVA</span>{" "}
-              <span className="font-bold">JAIN</span>
-            </span>
-          </a>
-          
-          {isMobile ? (
-            <div className="flex items-center gap-4">
-              {activeSection === 'home' && <ThemeToggle />}
-            </div>
-          ) : (
-            <div className="flex items-center gap-6">
-              <ExpandableTabs 
-                tabs={tabs} 
-                activeColor="text-foreground"
-                className="border-foreground/10"
-                onChange={handleExpandableTabChange}
-              />
-              <ThemeToggle />
-            </div>
-          )}
-        </nav>
-      </div>
+    <>
+      <header 
+        className={cn(
+          "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+          isMobile ? "pt-5" : "py-6",
+          isScrolled ? 
+            theme === 'dark' && isMobile ? 
+              "bg-background/40 backdrop-blur-sm" : 
+              "bg-background/90 backdrop-blur-sm" 
+            : "bg-transparent",
+        )}
+        data-theme={theme}
+      >
+        <div className="container-custom">
+          <nav className="flex items-center justify-between">
+            <a href="#home" className="text-xl font-bold text-foreground">
+              <span>
+                <span className="font-light">APOORVA</span>{" "}
+                <span className="font-bold">JAIN</span>
+              </span>
+            </a>
+            
+            {isMobile ? (
+              <div className="flex items-center gap-4">
+                {activeSection === 'home' && <ThemeToggle />}
+              </div>
+            ) : (
+              <div className="flex items-center gap-6">
+                <ExpandableTabs 
+                  tabs={tabs} 
+                  activeColor="text-foreground"
+                  className="border-foreground/10"
+                  onChange={handleExpandableTabChange}
+                />
+                <ThemeToggle />
+              </div>
+            )}
+          </nav>
+        </div>
+        
+        {activeSection === 'home' && !isMobile && (
+          <button
+            onClick={scrollToNextSection}
+            className="fixed bottom-6 left-6 w-10 h-10 rounded-full bg-foreground/10 flex items-center justify-center hover:bg-foreground/20 transition-colors"
+            aria-label="Scroll Down"
+          >
+            <ArrowDown className="w-5 h-5 text-foreground" />
+          </button>
+        )}
+      </header>
       
       {isMobile && (
         <div className="fixed bottom-6 right-6 z-50">
@@ -126,17 +137,7 @@ const Header = () => {
           />
         </div>
       )}
-      
-      {activeSection === 'home' && !isMobile && (
-        <button
-          onClick={scrollToNextSection}
-          className="fixed bottom-6 left-6 w-10 h-10 rounded-full bg-foreground/10 flex items-center justify-center hover:bg-foreground/20 transition-colors"
-          aria-label="Scroll Down"
-        >
-          <ArrowDown className="w-5 h-5 text-foreground" />
-        </button>
-      )}
-    </header>
+    </>
   );
 };
 
