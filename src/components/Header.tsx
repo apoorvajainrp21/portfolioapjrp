@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -5,6 +6,7 @@ import { MenuContainer, MenuItem } from '@/components/ui/fluid-menu';
 import { Menu as MenuIcon, X, User, BookOpen, Briefcase, Code, Mail, ArrowDown } from 'lucide-react';
 import { ExpandableTabs } from '@/components/ui/expandable-tabs';
 import { ThemeToggle } from '@/components/ui/theme-toggle';
+import { useTheme } from 'next-themes';
 import FloatingActionMenu from '@/components/ui/floating-action-menu';
 
 const Header = () => {
